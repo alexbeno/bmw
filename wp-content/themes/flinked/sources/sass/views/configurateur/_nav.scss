@@ -1,0 +1,98 @@
+.config {
+  margin-top: em(100);
+}
+
+.config__nav {
+  width: 330px;
+  height: auto;
+}
+
+.config__nav__item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: em(10);
+}
+
+.config__nav__item__bg {
+  width: 100%;
+  height: auto;
+}
+
+.config__nav__item__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 330px;
+  height: 100%;
+  color: white;
+  font-weight: $bold;
+  font-size: em(24);
+  text-decoration: none;
+  transition: all $transition-bezier1 0.3s;
+  text-transform: uppercase;
+  padding: 0 10px;
+  @include flex();
+  &:hover {
+    opacity: 0.7;
+    transition: all $transition-bezier1 0.3s;
+  }
+}
+
+
+
+.config__nav__item__sub__item {
+  display: block;
+  text-decoration: none;
+  margin-bottom: em(15);
+  font-size: em(18);
+  color: $blue;
+}
+
+.config__nav__sub {
+  display: none;
+  transform: translateX(100vw);
+  transition: all $transition-bezier1 0.3s;
+}
+.config__nav__sub--active {
+  display: block;
+  padding-top: em(100);
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 2;
+  background: white;
+  transition: all $transition-bezier1 0.3s;
+}
+
+.config__nav__sub__returns {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.config__term {
+  display: none;
+  transform: translateX(100vw);
+  transition: all $transition-bezier1 0.3s;
+}
+.config__term--active {
+  display: block;
+  padding-top: em(100);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 330px;
+  height: 100vh;
+  z-index: 3;
+  background: white;
+  transition: all $transition-bezier1 0.3s;
+}
+
+
+.config__term__returns {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}

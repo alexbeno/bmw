@@ -1,0 +1,45 @@
+.slider {
+  width: 40%  ;
+  height: auto;
+  position: relative;
+}
+
+.slider__container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider__container__mover {
+  width: 300vw;
+  @include flex($justify: flex-start);
+  transition: all $transition-bezier1 0.5s;
+}
+
+.slider__container__item {
+  width: 40vw;
+  height: auto;
+}
+
+.slider__button {
+  @include flex();
+  position: absolute;
+  bottom: 0;
+  left: -130px;
+}
+
+.slider__button__item {
+  width: 80px;
+  height: 55px;
+  background-color: $blue;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slider__button__item--left {
+  background-image: url('../../../../dist/assets/image/arrow_left.svg');
+}
+
+.slider__button__item--right {
+  background-image: url('../../../../dist/assets/image/arrow_right.svg');
+}

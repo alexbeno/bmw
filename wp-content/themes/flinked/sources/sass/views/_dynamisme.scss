@@ -1,0 +1,161 @@
+.dyna {
+
+}
+
+
+//aerodynamisme
+
+.dyna__aero {
+  padding-left: $center;
+  @include flex($justify: space-between);
+  position: relative;
+  overflow: hidden;
+
+  @include query(1200px) {
+    padding-left: $centerTab;
+  }
+  @include query(1200px) {
+    padding: 50px 0 0 $centerTab;
+  }
+}
+
+.dyna__aero__title {
+  text-align: left;
+  margin-bottom: em(80);
+  @include query(900px) {
+    margin-bottom: em(50);
+  }
+}
+
+.dyna__aero__content {
+  @include query(1200px) {
+    width: 47%;
+  }
+  @include query(900px) {
+    width: 100%;
+  }
+}
+
+.dyna__aero__slider {
+  width: 50%;
+  @include query(900px) {
+    display: none;
+  }
+}
+
+.dyna__aero__slider__container__item  {
+  width: 50vw;
+}
+
+.dyna__aero__slider__button {
+  bottom: 100px;
+  left: -25%;
+
+  @include query(1200px) {
+    bottom: 0px;
+    left: 20%;
+  }
+}
+
+
+.dyna__aero__number {
+  bottom: -90px;
+  left: 0;
+  z-index: -1;
+}
+
+
+// mode de conduite 
+
+.dyna__mode {
+  padding: 100px $center;
+  @include flex($justify: space-between);
+  position: relative;
+  overflow: hidden;
+
+  @include query(1200px) {
+    padding: 100px $centerTab;
+  }
+
+  @include query(900px) {
+    flex-direction: column;
+  }
+}
+
+.dyna__mode__title {
+  text-align: left;
+  margin-bottom: em(80);
+}
+
+.dyna__mode__content {
+  @include query(900px) {
+    width: 100%;
+  }
+}
+
+.dyna__mode__image {
+  @include query(900px) {
+    width: 100%;
+  }
+}
+
+.dyna__mode__slider__button {
+  left: initial;
+  right: 0;
+}
+
+.dyna__mode__number {
+  bottom: -100px;
+  right: 0;
+  z-index: -1;
+}
+
+.dyna__mode__image__img {
+  width: 100%;
+  height: auto;
+}
+
+//architecture 
+
+
+.dyna__archi {
+  padding: 100px $center;
+  position: relative;
+  overflow: hidden;
+
+  @include query(1200px) {
+    padding: 100px $centerTab;
+  }
+}
+
+.dyna__archi__title {
+  margin-bottom: em(80);
+}
+
+
+.dyna__archi__image {
+  width: 100%;
+  height: auto;
+}
+
+
+.dyna__archi__container {
+  margin-top: 60px;
+  @include flex($justify: space-between);
+
+  @include query(900px) {
+    flex-direction: column;
+  }
+}
+
+.dyna__archi__container__content {
+  @include query(900px) {
+    width: 100%;
+  }
+}
+
+.dyna__archi__number {
+  bottom: -100px;
+  left: -45px;
+  z-index: -1;
+}

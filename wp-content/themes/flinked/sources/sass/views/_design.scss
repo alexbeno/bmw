@@ -1,0 +1,192 @@
+//header 
+
+.design__header__content {
+  @include query(1200px) {
+    padding: 0 $centerTab;
+  }
+}
+
+//philosophie
+
+.design__philo {
+  width: 100%;
+  margin-top: em(50);
+  padding-right: $center;
+  position: relative;
+
+  @include query(1200px) {
+    padding-right: $centerTab;
+  }
+
+  @include query(850px) {
+    padding-right: 0;
+    padding: 0 $centerTab;
+  }
+}
+
+.design__philo__flex {
+  @include flex($justify: space-between);
+
+  @include query(850px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.design__philo__image {
+  width: 70%;
+  height: auto;
+  margin-left: -25%;
+
+  @include query(850px) {
+    margin-left: -18%;
+  }
+}
+
+.design__philo__content {
+  width: 35%;
+
+  @include query(1200px) {
+    width: 45%;
+  }
+
+  @include query(850px) {
+    width: 100%;
+  }
+}
+.design__philo__number {
+  bottom: -100px;
+  z-index: -1;  
+}
+// exterieur 
+
+.design__exterieur {
+  width: 90%;
+  margin: auto;
+  padding: 0 $center;
+  margin-top: 30px;
+  background: $white;
+  position: relative;
+  z-index: 10;
+
+  @include query(1200px) {
+    padding: 0 $centerTab;
+    width: 100%;
+  }
+}
+
+.design__exterieur__title {
+  text-align: left;
+  margin-bottom: em(80);
+}
+
+.design__exterieur__content {
+  width: 45%;
+
+  @include query(850px) {
+    width: 100%;
+  }
+}
+
+.design__exterieur__container {
+  @include flex($justify: space-between);
+
+  @include query(850px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.design__exterieur__footer {
+  height: auto;
+  @include fullWidthContainer();
+}
+
+.design__exterieur__number {
+  left: 0;
+  bottom: -100px;
+  opacity: 0.5;
+}
+
+//design lumiere 
+.design__lumiere {
+  margin-top: -10px;
+  padding-left: $center;
+  background: $white;
+  position: relative;
+  z-index: 10;
+  @include flex($justify: space-between);
+
+  @include query(1200px) {
+    padding-left: $centerTab;
+  }
+
+  @include query(850px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.design__lumiere__container {
+  width: 55%;
+  padding-top: em(110);
+
+  @include query(950px) {
+    padding-top: em(30);
+  }
+
+  @include query(850px) {
+    width: 90%;
+  }
+}
+
+.design__lumiere__content {
+  width: 60%;
+
+  @include query(1200px) {
+    width: 90%;
+  }
+
+  @include query(850px) {
+    width: 100%;
+  }
+}
+
+.design__lumiere__title {
+  text-align: left;
+  margin-bottom: em(80);
+
+  @include query(950px) {
+    margin-bottom: em(15);
+  }
+
+  @include query(850px) {
+    margin-bottom: em(25);
+  }
+}
+
+.design__lumiere__number {
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.design__lumiere__slider {
+  @include query(850px) {
+    width: 90vw;
+  }
+}
+
+.design__lumiere__slider__container__item {
+  @include query(850px) {
+    width: 90vw;
+  }
+}
+
+.design__lumiere__slider__button {
+  @include query(1110px) {
+    left: -65px;
+  }
+  @include query(850px) {
+    left: 0;
+  }
+}

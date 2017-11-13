@@ -1,0 +1,45 @@
+.block__header {
+  width: 100%;
+  height: em(485);
+  overflow: hidden;
+  position: relative;
+}
+
+.block__header__image {
+  width: 100%;
+  height: auto;
+  @include query(1440px) {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.block__header__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: em(485);
+  padding-left: $center;
+  color: white;
+  @include flex($direction: column, $align: flex-start);
+
+  @include query(950px) {
+    padding-left: $centerTab;
+  }
+
+  @include query(850px) {
+    left: 0;
+  }
+}
+
+.block__header__content__title {
+  font-size: em(36);
+  font-weight: $bold;
+}
+
+.block__header__content__subTitle {
+  font-size: em(16);
+  margin-top: em(16);
+  font-weight: $semi-bold
+}

@@ -1,0 +1,31 @@
+/**
+* import your scss
+**/
+
+/* [core config] */
+
+@import 'core/_reset';
+@import 'core/_config';
+@import 'core/_mixin';
+@import 'core/_font';
+
+/* [global config] */
+
+@import 'global/_body';
+@import 'global/_welcome';
+@import 'global/_header';
+@import 'global/_footer';
+
+/* [view file] */
+@import 'components/_blockTitle';
+@import 'components/_blockContent';
+@import 'components/_numberSection';
+@import 'components/_blockSlider';
+@import 'components/_blockHeader';
+
+/* [view file] */
+@import 'views/_home';
+@import 'views/_design';
+@import 'views/_securite';
+@import 'views/_dynamisme';
+@import 'views/_configurateur';

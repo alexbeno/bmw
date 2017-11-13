@@ -1,0 +1,19 @@
+.content {
+  width: 40%;
+}
+
+.content__title {
+  font-size: em(20);
+  font-weight: $semi-bold;
+  margin-bottom: em(20);
+}
+
+.content__text {
+  font-size: em(16);
+  line-height: em(24);
+
+  p {
+    margin-bottom: 30px;
+    color: $medblack;
+  }
+}

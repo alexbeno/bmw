@@ -1,0 +1,16 @@
+//center 
+
+$center: 117px;
+$centerTab: 30px;
+$fullWidth: 234px;
+
+@mixin fullWidth () {
+  width: calc(100% + 234px);
+  margin-left: - $center;
+}
+
+
+@mixin fullWidthContainer () {
+  width: calc(120% + 234px);
+  margin-left: calc(-10% - 117px);
+}

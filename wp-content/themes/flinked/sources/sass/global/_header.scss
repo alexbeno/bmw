@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 $center;
+  height: em(95);
+  @include flex($justify: space-between);
+  z-index: 100;
+  @include query(1200px) {
+    padding: 0 $centerTab;
+  }
+  @include query(950px) {
+    padding: 0 $centerTab;
+    display: none;
+  }
+}
+
+.header--scroll {
+  background: $white;
+}
+
+.header__menu {
+  width: 80%;
+  height: em(95);
+  ul {
+    width: 100%;
+    height: em(95);
+    @include flex($justify: flex-end);
+    li {
+      margin-left: em(30);
+      a {
+        text-decoration: none;
+        font-size: em(16);
+        color: $white;
+      }
+      &:last-child {
+        a {
+          @include abutton($left: em(30), $up: em(15));
+          background: $blue;
+          border-radius: em(25);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.header__menu--scroll {
+  ul {
+    li {
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+.header__logo {
+  width: em(40);
+  height: auto;
+}
+
+
+.header--responsive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: em(85);
+  z-index: 100;
+  padding: 0 $centerTab;
+  @include flex($justify: space-between);
+  background: $white;
+  display: none;
+  
+  @include query(950px) {
+    display: flex;
+  }
+}
+
+.header--responsive__logo {
+  width: em(40);
+  height: auto;
+}
+
+.header--responsive__button {
+  width: em(35);
+  height: auto;
+  cursor: pointer;
+}
+
+.header--responsive__close {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: em(35);
+  height: auto;
+  cursor: pointer;
+}
+
+.header--responsive__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: $white;
+  transform: translateX(100vw);
+  transition: all $transition-bezier2 0.2s;
+
+  ul {
+    margin-top: 15vh;
+    height: 70vh;
+    width: 100%;
+    @include flex($direction: column, $justify: space-around);
+
+    li {
+        
+      a {
+        text-decoration: none;
+        font-size: em(18);
+        font-weight: $semi-bold;
+        color: $black;
+      }
+      &:last-child {
+        a {
+          @include abutton($left: em(30), $up: em(15));
+          background: $blue;
+          border-radius: em(25);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

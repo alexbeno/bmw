@@ -1,0 +1,11 @@
+.numberSection {
+  font-size: em(250);
+  font-weight: $bold;
+  color: #F7F7F7;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  @include query(850px) {
+    display: none;
+  }
+}
