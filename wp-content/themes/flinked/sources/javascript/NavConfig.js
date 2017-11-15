@@ -17,11 +17,13 @@ class NavColor
         for(let i = 0; i < size; i++ ) {
           that.nav[i].addEventListener('click', function(e) {
             e.preventDefault();
-            this.childNodes[3].classList.add('config__nav__sub--active');
-            setTimeout(() => {
-              this.childNodes[3].style.transform="translateX(0)";
-              that.returns();
-            }, 100);
+            if(this.childNodes[3]) {
+              this.childNodes[3].classList.add('config__nav__sub--active');
+              setTimeout(() => {
+                this.childNodes[3].style.transform="translateX(0)";
+                that.returns();
+              }, 100);
+            }
           })
         }
       }

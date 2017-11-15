@@ -1,6 +1,14 @@
+/**
+* navigation of configurateur
+*/
+import AddOption from './../AddOption.js'
 
 var ajax = function () {
+
   jQuery(document).ready(function ($) {
+
+    let addOption = new AddOption();
+    addOption.init();
 
     $('.config__nav__item__sub__link').on('click', function(e){
       e.preventDefault();
@@ -22,6 +30,7 @@ var ajax = function () {
           },
           function(response){
             response_section.append(response);
+            addOption.clickEvent();
           }
       );
     });

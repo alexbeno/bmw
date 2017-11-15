@@ -16,6 +16,7 @@ if ( have_posts() ){
     get_template_part($path . 'main');
     get_template_part($path . 'car');
     get_template_part($path . 'nav');
+    get_template_part($path . 'price');
     ?>
      </div>
     <?php 

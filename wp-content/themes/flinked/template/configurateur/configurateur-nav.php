@@ -20,7 +20,6 @@ $term_option = get_terms( 'option', array(
     'orderby'    => 'count',
     'hide_empty' => 0
 ) );
-
 ?>
 
 <div class="config__nav">
@@ -28,6 +27,8 @@ $term_option = get_terms( 'option', array(
 <!-- [moteur items] -->
 
   <div class="config__nav__container">
+  <?php if(wp_count_terms( 'moteur' ) > 1) { ?>
+
     <div class="config__nav__item">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/moteur.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__link">Moteurs</a>
@@ -43,15 +44,30 @@ $term_option = get_terms( 'option', array(
             <img src="<?= IMAGES_URL ?>/configurateur/menu/moteur.jpg" alt="moteur" class="config__nav__item__sub__item_img config__nav__item__bg ">
             <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="moteur" data-slug="<?= $slug ?>" ><?= $current ?></a>
           </div>
+
       <?php         
       }
       ?>
     </div>
+    <?php 
+    } 
+    else { 
+      foreach( $term_moteur as $term ) {
+        $current = $term->name;
+        $slug = $term->slug;
+    ?>
+    <div class="config__nav__item">
+      <img src="<?= IMAGES_URL ?>/configurateur/menu/moteur.jpg" alt="moteur" class="config__nav__item__bg">
+      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="moteur" data-slug="<?= $slug ?>" ><?= $current ?></a>
+    </div>
+    <?php }} ?>
   </div>
 
 <!-- [exterieur items] -->
 
   <div class="config__nav__container">
+  <?php if(wp_count_terms( 'exterieur' ) > 1) { ?>
+
     <div class="config__nav__item">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/ext.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__link">Extérieur</a>
@@ -71,11 +87,25 @@ $term_option = get_terms( 'option', array(
       }
       ?>
     </div>
+    <?php 
+    } 
+    else { 
+      foreach( $term_exterieur as $term ) {
+        $current = $term->name;
+        $slug = $term->slug;
+    ?>
+    <div class="config__nav__item">
+      <img src="<?= IMAGES_URL ?>/configurateur/menu/ext.jpg" alt="moteur" class="config__nav__item__bg">
+      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="exterieur" data-slug="<?= $slug ?>" ><?= $current ?></a>
+    </div>
+    <?php }} ?>
   </div>
 
 <!-- [interieur items] --> 
 
   <div class="config__nav__container">
+  <?php if(wp_count_terms( 'interieur' ) > 1) { ?>
+
     <div class="config__nav__item">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/int.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__link">Intérieur</a>
@@ -95,11 +125,25 @@ $term_option = get_terms( 'option', array(
       }
       ?>
     </div>
+    <?php 
+    } 
+    else { 
+      foreach( $term_interieur as $term ) {
+        $current = $term->name;
+        $slug = $term->slug;
+    ?>
+    <div class="config__nav__item">
+      <img src="<?= IMAGES_URL ?>/configurateur/menu/int.jpg" alt="moteur" class="config__nav__item__bg">
+      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="interieur" data-slug="<?= $slug ?>" ><?= $current ?></a>
+    </div>
+    <?php }} ?>
   </div>
 
 <!-- [pack items] -->
 
   <div class="config__nav__container">
+  <?php if(wp_count_terms( 'pack' ) > 1) { ?>
+
     <div class="config__nav__item">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/pack.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__link">Pack D'équipements</a>
@@ -119,11 +163,24 @@ $term_option = get_terms( 'option', array(
       }
       ?>
     </div>
+    <?php 
+    } 
+    else { 
+      foreach( $term_pack as $term ) {
+        $current = $term->name;
+        $slug = $term->slug;
+    ?>
+    <div class="config__nav__item">
+      <img src="<?= IMAGES_URL ?>/configurateur/menu/pack.jpg" alt="moteur" class="config__nav__item__bg">
+      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="pack" data-slug="<?= $slug ?>" >Pack D'équipements</a>
+    </div>
+    <?php }} ?>
   </div>
 
 <!-- [options items] -->
 
   <div class="config__nav__container">
+  <?php if(wp_count_terms( 'option' ) > 1) { ?>
     <div class="config__nav__item">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/option.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__link">Options</a>
@@ -143,6 +200,18 @@ $term_option = get_terms( 'option', array(
       }
       ?>
     </div>
+    <?php 
+    } 
+    else { 
+      foreach( $term_option as $term ) {
+        $current = $term->name;
+        $slug = $term->slug;
+    ?>
+    <div class="config__nav__item">
+      <img src="<?= IMAGES_URL ?>/configurateur/menu/option.jpg" alt="moteur" class="config__nav__item__bg">
+      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="option" data-slug="<?= $slug ?>" ><?= $current ?></a>
+    </div>
+    <?php }} ?>
   </div>
   <div class="config__term">
   <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__term__returns">

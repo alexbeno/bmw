@@ -20,6 +20,8 @@
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
             $the_query->the_post();
+            set_query_var( 'mainSlug', $mainSlug );
+            set_query_var( 'slug', $slug );
             get_template_part('template/configurateur/components/configurateur-components-term');
         }
         /* Restore original Post Data */
