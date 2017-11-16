@@ -5,6 +5,6 @@
 
 
 <div class="config__price">
-  <h1>c'est cher quand même </h1>
+  <h1>Prix maximum conseillé :</h1>
   <p data-price="<?= $config_price ?>" class="config__price__item"><?= $config_price ?>,00</p>
 </div>

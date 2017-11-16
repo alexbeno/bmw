@@ -1,1 +1,0 @@
-import GreyColor from './data/color/grey.js'

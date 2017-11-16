@@ -3,7 +3,7 @@ import Slider from './Slider.js'
 import BurgerMenu from './BurgerMenu.js'
 import ajax from './ajax.js'
 import NavConfig from './NavConfig.js'
-import data from './data.js'
+import View360 from './View360.js'
 
 
 function init() {
@@ -36,6 +36,13 @@ function init() {
 
   let navConfig = new NavConfig();
   navConfig.init();
+
+  /**
+  * 360 views
+  */
+
+  let view360 = new View360();
+  view360.init();
   
 }
 

@@ -1,4 +1,36 @@
-.car {
-  width: calc(90% - 330px);
+.config__car {
+  width: 70%;
   height: auto;
+}
+
+.config__car__image {
+  width: 100%;
+  height: auto;
+  margin-left: -5%;
+}
+
+.config__price {
+  width: 100%;
+  margin-top: em(60);
+  @include flex();
+}
+
+.config__price__text {
+  font-size: em(18);
+}
+
+.config__price__item {
+  font-size: em(18);
+  font-weight: $bold;
+  margin-left: 10px;
+}
+
+.config__price__devis {
+  @include abutton($left: em(20), $up: em(15));
+  background: $blue;
+  border-radius: em(25);
+  text-transform: uppercase;  
+  text-decoration: none;
+  margin-left: em(40);
+  font-size: em(16);  
 }

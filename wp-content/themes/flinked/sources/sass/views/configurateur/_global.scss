@@ -1,6 +1,5 @@
 .config {
   width: 100%;
-  padding-left: $center;
   @include flex($justify: space-between);
   flex-wrap: wrap;
 }
