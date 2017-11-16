@@ -1,6 +1,7 @@
 .config__car {
   width: 70%;
   height: auto;
+  position: relative;
 }
 
 .config__car__image {
@@ -33,4 +34,19 @@
   text-decoration: none;
   margin-left: em(40);
   font-size: em(16);  
+}
+
+.config__3D {
+  width: 65px;
+  height: 100%;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  @include flex();
+}
+
+.config__3D__image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
 }

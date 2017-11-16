@@ -9,13 +9,14 @@ class View360
     {
       this.main = document.querySelector('.config__car');
       this.container = document.querySelector('.config__car__image');
+      this.button = document.querySelector('.config__3D__image');
       this.image = new Image();
       this.index = 0;
       this.size = black_blue.sortKey.length;
       this.indexDrag = 1;
     }
     initDisplay() {     
-      let current = black_blue[black_blue.sortKey[0]].url;
+      let current = black_blue[black_blue.sortKey[13]].url;
       this.container.setAttribute('src', current)
     }
     loadingCallBack(data) {
@@ -28,6 +29,7 @@ class View360
         }
         else {
           that.initDisplay();
+          that.startView();
         }
       }
     }
@@ -39,24 +41,26 @@ class View360
 
       this.index++
     }
-
-
     update(image) {
       this.container.setAttribute('src', image)
     }
     auto() {
       let that = this;
-      let index = 0;
-      setInterval(function(){
+      let index = 16;
+      let inter = setInterval(function(){
         if(index < that.size) {
           index++
-          let current = "black_blue_" + index
-          that.update(black_blue[current].url)
+        } 
+        else {
+          that.event();
+          clearInterval(inter);
         }
-      }, 150);
+        let current = "black_blue_" + index
+        that.update(black_blue[current].url)
+      }, 100);
     }
     dragCallback(x) {
-      console.log(this.indexDrag)
+      // console.log(this.indexDrag)
       if(x < 0) {
         if(this.indexDrag >= this.size )
         {
@@ -64,7 +68,7 @@ class View360
         }
         else {
           this.indexDrag++
-          console.log(this.indexDrag)
+          // console.log(this.indexDrag)
         }
       }
       else if(x > 0) {
@@ -74,6 +78,7 @@ class View360
         }
         else {
           this.indexDrag--
+          // console.log('hey')
         }
       }
       let current = "black_blue_" + this.indexDrag
@@ -89,7 +94,7 @@ class View360
         max : 1,
         snap: {
           targets: [
-            interact.createSnapGrid({ x: 50, y: 50 })
+            interact.createSnapGrid({ x: 30, y: 30 })
           ],
           range: Infinity,
           relativePoints: [ { x: 0, y: 0 } ]
@@ -103,19 +108,25 @@ class View360
       })
       
       .on('dragmove', function (event) {
-        x += event.dx;
-        y += event.dy; 
-        if(x != 0) {
+        x = event.dx;
+        y = event.dy; 
+        if(x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
           // console.log(x)
         }
+      });
+    }
+    startView() {
+      let that = this;
+      this.button.addEventListener('click', function(e){
+        that.auto();
       });
     }
     init() 
     {
       if(this.main != null) {
         this.loadingImage(this.index);
-        this.event();
+        // this.event();
       }
     }
 }
