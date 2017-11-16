@@ -22,7 +22,9 @@
             $the_query->the_post();
             set_query_var( 'mainSlug', $mainSlug );
             set_query_var( 'slug', $slug );
-            get_template_part('template/configurateur/components/configurateur-components-term');
+            if($slug === "teintes_exterieures") {
+              get_template_part('template/configurateur/components/configurateur-components-teinte');
+            }
         }
         /* Restore original Post Data */
         wp_reset_postdata();

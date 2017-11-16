@@ -88,6 +88,12 @@ class AddOption
       let that = this;
       let index = 0;
       this.price.setAttribute('data-update', this.updatePrice )
+      
+      if(diff === 0) {
+        let temp = this.basePrice
+        let tempB = Intl.NumberFormat().format(temp)
+        that.price.innerHTML =  tempB + ',00';  
+      }
 
       for (let index = 0; index < diff; index++) {
         let count = setTimeout(function(){
@@ -107,16 +113,15 @@ class AddOption
 
     getTabPrice() {
       
-            let that = this;
-            this.tempPrice = 0;
-      
-            for (let key in this.option) {
-              this.option[key];
-              that.tempPrice += this.option[key].price;
-            }
-            this.update(this.tempPrice);
-            console.log(this.tempPrice  );
-          }
+      let that = this;
+      this.tempPrice = 0;
+
+      for (let key in this.option) {
+        this.option[key];
+        that.tempPrice += this.option[key].price;
+      }
+      this.update(this.tempPrice);
+    }
 
     saveOption(optionCat, price, name, slug) {
       this.option[optionCat].price = price;
@@ -128,15 +133,25 @@ class AddOption
     clickEvent () {
       let navButton = document.querySelectorAll('.config__nav__item__sub__link');
       let optionButton = document.querySelectorAll('.config__term__item__add');
+      
       let size = optionButton.length;
       let that = this;
+
       for(let i = 0; i < size; i++ ) {
         optionButton[i].addEventListener('click', function(e) {
           e.preventDefault();
+
+          let activeItem = document.querySelector('.config__term__item--active');
+          if(activeItem != null) {
+            activeItem.classList.remove('config__term__item--active')
+          }
+
+          this.classList.add('config__term__item--active');
           let optionCat   = this.getAttribute('data-cat');
           let optionPrice = parseInt(this.getAttribute('data-price'));
           let optionName  = this.getAttribute('data-title');
           let optionSlug  = this.getAttribute('data-slug');
+
           that.saveOption(optionCat, optionPrice, optionName, optionSlug );
         })
       }

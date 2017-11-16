@@ -3,6 +3,7 @@ import Slider from './Slider.js'
 import BurgerMenu from './BurgerMenu.js'
 import ajax from './ajax.js'
 import NavConfig from './NavConfig.js'
+import data from './data.js'
 
 
 function init() {

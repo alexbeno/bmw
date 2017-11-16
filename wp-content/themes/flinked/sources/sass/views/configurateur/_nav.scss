@@ -7,6 +7,27 @@
   height: auto;
 }
 
+.config__nav__histo {
+  margin-bottom: em(15);
+}
+
+.config__nav__histo__arrow {
+  width: em(18);
+  height: auto;
+  cursor: pointer;
+  opacity: 0.3;
+  position: relative;
+  z-index: 10;
+}
+
+.config__nav__histo__arrow--active {
+  opacity: 1;
+}
+
+.config__nav__histo__arrow--next {
+  margin-left: em(15);
+}
+
 .config__nav__item {
   width: 100%;
   height: auto;
@@ -58,7 +79,7 @@
   display: block;
   padding-top: em(100);
   position: fixed;
-  top: 0;
+  top: 40px;
   right: 0;
   height: 100vh;
   z-index: 2;
@@ -70,6 +91,7 @@
   width: 30px;
   height: auto;
   cursor: pointer;
+  display: none;
 }
 
 .config__term {
@@ -81,7 +103,7 @@
   display: block;
   padding-top: em(100);
   position: fixed;
-  top: 0;
+  top: 25px;
   right: 0;
   width: 330px;
   height: 100vh;

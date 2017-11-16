@@ -23,6 +23,11 @@ $term_option = get_terms( 'option', array(
 ?>
 
 <div class="config__nav">
+  <div class="config__nav__histo">
+    <img src="<?= IMAGES_URL ?>/back.svg" alt="moteur" class="config__nav__histo__arrow config__nav__histo__arrow--back">
+    <img src="<?= IMAGES_URL ?>/next.svg" alt="moteur" class="config__nav__histo__arrow config__nav__histo__arrow--next">
+  </div>
+
 
 <!-- [moteur items] -->
 
@@ -34,7 +39,6 @@ $term_option = get_terms( 'option', array(
       <a href="#" class="config__nav__item__link">Moteurs</a>
     </div>
     <div class="config__nav__sub">
-      <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__nav__sub__returns">
       <?php 
       foreach( $term_moteur as $term ) {
         $current = $term->name;
@@ -73,7 +77,6 @@ $term_option = get_terms( 'option', array(
       <a href="#" class="config__nav__item__link">Extérieur</a>
     </div>
     <div class="config__nav__sub">
-      <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__nav__sub__returns">
       <?php 
       foreach( $term_exterieur as $term ) {
         $current = $term->name;
@@ -111,7 +114,6 @@ $term_option = get_terms( 'option', array(
       <a href="#" class="config__nav__item__link">Intérieur</a>
     </div>
     <div class="config__nav__sub">
-      <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__nav__sub__returns">
       <?php 
       foreach( $term_interieur as $term ) {
         $current = $term->name;
@@ -149,7 +151,6 @@ $term_option = get_terms( 'option', array(
       <a href="#" class="config__nav__item__link">Pack D'équipements</a>
     </div>
     <div class="config__nav__sub">
-      <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__nav__sub__returns">
       <?php 
       foreach( $term_pack as $term ) {
         $current = $term->name;
@@ -186,7 +187,6 @@ $term_option = get_terms( 'option', array(
       <a href="#" class="config__nav__item__link">Options</a>
     </div>
     <div class="config__nav__sub">
-      <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__nav__sub__returns">
       <?php 
       foreach( $term_option as $term ) {
         $current = $term->name;
@@ -214,6 +214,7 @@ $term_option = get_terms( 'option', array(
     <?php }} ?>
   </div>
   <div class="config__term">
-  <img src="<?= IMAGES_URL ?>/return.svg" alt="retourner en arriere" class="config__term__returns">
+    <div class="config__term__container">
+    </div>
   </div>
 </div>
