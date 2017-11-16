@@ -1,4 +1,5 @@
-import black_blue from './data/color/grey.js'
+import sophisto_grey_blue from './data/color/sophisto_grey_blue.js'
+import sophisto_grey from './data/color/sophisto_grey.js'
 
 class View360
 {
@@ -7,16 +8,33 @@ class View360
      */
     constructor( options )
     {
+      let that = this;
       this.main = document.querySelector('.config__car');
       this.container = document.querySelector('.config__car__image');
       this.button = document.querySelector('.config__3D__image');
       this.image = new Image();
       this.index = 0;
-      this.size = black_blue.sortKey.length;
+      this.size = sophisto_grey_blue.sortKey.length;
       this.indexDrag = 1;
+
+      this.colorAllOtion = {
+        sophisto_grey : {
+          obj: sophisto_grey  ,
+          slug: "sophisto_grey_",
+        },
+        sophisto_grey_blue: {
+          obj: sophisto_grey_blue,
+          slug: "sophisto_grey_blue_",
+        },
+      }
+
+      this.currentKey = this.colorAllOtion['sophisto_grey_blue'];
+
+      this.colorData = this.currentKey.obj;
+      this.colorDataText = this.currentKey.slug;
     }
     initDisplay() {     
-      let current = black_blue[black_blue.sortKey[13]].url;
+      let current = this.colorData[this.colorData.sortKey[13]].url;
       this.container.setAttribute('src', current)
     }
     loadingCallBack(data) {
@@ -34,10 +52,10 @@ class View360
       }
     }
     loadingImage(index) {
-      let currentKey = black_blue.sortKey[index];
-      this.image.src = black_blue[black_blue.sortKey[index]].url;
+      let currentKey = this.colorData.sortKey[index];
+      this.image.src = this.colorData[this.colorData.sortKey[index]].url;
 
-      this.loadingCallBack(black_blue[black_blue.sortKey[index]]);
+      this.loadingCallBack(this.colorData[this.colorData.sortKey[index]]);
 
       this.index++
     }
@@ -55,8 +73,8 @@ class View360
           that.event();
           clearInterval(inter);
         }
-        let current = "black_blue_" + index
-        that.update(black_blue[current].url)
+        let current = that.colorDataText + index
+        that.update(that.colorData[current].url)
       }, 100);
     }
     dragCallback(x) {
@@ -81,8 +99,8 @@ class View360
           // console.log('hey')
         }
       }
-      let current = "black_blue_" + this.indexDrag
-      this.update(black_blue[current].url)
+      let current = this.colorDataText + this.indexDrag
+      this.update(this.colorData[current].url)
     }
     event () {
       let that = this;
@@ -142,7 +160,7 @@ export default View360
     //      console.log('fini mec');
     //   }
     //   this.index++
-    //   if(this.index < black_blue.sortKey.length -1) {
+    //   if(this.index < sophisto_grey_blue.sortKey.length -1) {
     //     this.loadingImage(this.index)
     //   }
     //   else {
@@ -151,9 +169,9 @@ export default View360
     // }
     // loadingImage() {
     //   let that = this;
-    //   for (let key in black_blue) {
-    //     that.image.src = black_blue[key].url;
-    //     this.loadingCallBack(black_blue[key]);
+    //   for (let key in sophisto_grey_blue) {
+    //     that.image.src = sophisto_grey_blue[key].url;
+    //     this.loadingCallBack(sophisto_grey_blue[key]);
     //   }
-    //   // console.log(black_blue[1])
+    //   // console.log(sophisto_grey_blue[1])
     // }
