@@ -25,6 +25,9 @@
             if($slug === "teintes_exterieures") {
               get_template_part('template/configurateur/components/configurateur-components-teinte');
             }
+            if($slug === "jantes") {
+              get_template_part('template/configurateur/components/configurateur-components-jante');
+            }
         }
         /* Restore original Post Data */
         wp_reset_postdata();

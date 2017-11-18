@@ -1,5 +1,15 @@
 import sophisto_grey_blue from './data/color/sophisto_grey_blue.js'
 import sophisto_grey from './data/color/sophisto_grey.js'
+import ionic_silver from './data/color/ionic_silver.js'
+import crystal_white_grey from './data/color/crystal_white_grey.js'
+import crystal_white_blue from './data/color/crystal_white_blue.js'
+
+
+import crystal_white_blue_jante_625_turbine from './data/jante/crystal_white_blue_jante_625_turbine.js'
+import ionic_silver_jante_625_turbine from './data/jante/ionic_silver_jante_625_turbine.js'
+import sophisto_grey_blue_jante_625_turbine from './data/jante/sophisto_grey_blue_jante_625_turbine.js'
+import sophisto_grey_jante_625_turbine from './data/jante/sophisto_grey_jante_625_turbine.js'
+import crystal_white_grey_jante_625_turbine from './data/jante/crystal_white_grey_jante_625_turbine.js'
 
 class View360
 {
@@ -12,10 +22,16 @@ class View360
       this.main = document.querySelector('.config__car');
       this.container = document.querySelector('.config__car__image');
       this.button = document.querySelector('.config__3D__image');
+      this.checkOption = document.querySelectorAll('.config__nav__item__sub__link');
       this.image = new Image();
       this.index = 0;
-      this.size = sophisto_grey_blue.sortKey.length;
-      this.indexDrag = 1;
+      this.indexDrag = 0;
+      this.theviewstart = false;
+
+      this.currentConfig = {
+        jante: null,
+        color: "sophisto_grey_blue",
+      }
 
       this.colorAllOtion = {
         sophisto_grey : {
@@ -26,36 +42,79 @@ class View360
           obj: sophisto_grey_blue,
           slug: "sophisto_grey_blue_",
         },
+        ionic_silver: {
+          obj: ionic_silver,
+          slug: "ionic_silver_",
+        },
+        crystal_white_grey: {
+          obj: crystal_white_grey,
+          slug: "crystal_white_grey_",
+        },
+        crystal_white_blue: {
+          obj: crystal_white_blue,
+          slug: "crystal_white_blue_",
+        },
+        crystal_white_blue_jante_625_turbine: {
+          obj: crystal_white_blue_jante_625_turbine,
+          slug: "crystal_white_blue_jante_625_turbine_",
+        },
+        ionic_silver_jante_625_turbine: {
+          obj: ionic_silver_jante_625_turbine,
+          slug: "ionic_silver_jante_625_turbine_",
+        },
+        sophisto_grey_blue_jante_625_turbine: {
+          obj: sophisto_grey_blue_jante_625_turbine,
+          slug: "sophisto_grey_blue_jante_625_turbine_",
+        },
+        sophisto_grey_jante_625_turbine: {
+          obj: sophisto_grey_jante_625_turbine,
+          slug: "sophisto_grey_jante_625_turbine_",
+        },
+        crystal_white_grey_jante_625_turbine: {
+          obj: crystal_white_grey_jante_625_turbine,
+          slug: "crystal_white_grey_jante_625_turbine_",
+        },
       }
 
       this.currentKey = this.colorAllOtion['sophisto_grey_blue'];
 
       this.colorData = this.currentKey.obj;
       this.colorDataText = this.currentKey.slug;
+      this.size = this.currentKey.obj.sortKey.length;
     }
-    initDisplay() {     
-      let current = this.colorData[this.colorData.sortKey[13]].url;
+    initDisplay(index) {     
+      let current = this.colorData[this.colorData.sortKey[index - 1]].url;
       this.container.setAttribute('src', current)
     }
-    loadingCallBack(data) {
+    loadingCallBack(data, index) {
       let that = this;
       this.image.onload = function()
       {
         if(that.index < that.size ) {
-          that.loadingImage(that.index);
+          if(index === 13) {
+            that.loadingImage(that.index);
+          }
+          else {
+            that.loadingImage(that.index, true, index);
+          }
           data.load = true;
         }
         else {
-          that.initDisplay();
+          that.initDisplay(index);
           that.startView();
         }
       }
     }
-    loadingImage(index) {
+    loadingImage(index, change, current) {
       let currentKey = this.colorData.sortKey[index];
       this.image.src = this.colorData[this.colorData.sortKey[index]].url;
 
-      this.loadingCallBack(this.colorData[this.colorData.sortKey[index]]);
+      if(change === true) {
+        this.loadingCallBack(this.colorData[this.colorData.sortKey[index]], current);
+      }
+      else {
+        this.loadingCallBack(this.colorData[this.colorData.sortKey[index]], 13);
+      }
 
       this.index++
     }
@@ -78,7 +137,6 @@ class View360
       }, 100);
     }
     dragCallback(x) {
-      // console.log(this.indexDrag)
       if(x < 0) {
         if(this.indexDrag >= this.size )
         {
@@ -86,7 +144,6 @@ class View360
         }
         else {
           this.indexDrag++
-          // console.log(this.indexDrag)
         }
       }
       else if(x > 0) {
@@ -96,7 +153,6 @@ class View360
         }
         else {
           this.indexDrag--
-          // console.log('hey')
         }
       }
       let current = this.colorDataText + this.indexDrag
@@ -130,48 +186,100 @@ class View360
         y = event.dy; 
         if(x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
-          // console.log(x)
         }
       });
     }
     startView() {
       let that = this;
       this.button.addEventListener('click', function(e){
-        that.auto();
+        if(that.theviewstart === false)   {
+          that.auto();
+          that.theviewstart = true;
+        }
       });
+    }
+    changeColor(slug) {
+      this.currentKey = this.colorAllOtion[slug];
+      this.index = 0;
+      this.colorData = this.currentKey.obj;
+      this.colorDataText = this.currentKey.slug;
+      
+      if(this.colorData[this.colorData.sortKey[10]].load === false)
+      {
+        this.loadingImage(this.index, true, this.indexDrag);
+      }
+      else {
+        this.initDisplay(this.indexDrag - 1);
+      }
+    }
+    optionClick() {
+      let optionButton = document.querySelectorAll('.config__term__item__adds--color');
+      let sizeOption =  optionButton.length;
+      let that = this;
+      for(let i = 0; i < sizeOption; i++ ) {
+        optionButton[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          let slug = this.getAttribute('data-slug');
+          that.currentConfig['color'] = slug;
+
+          if(that.currentConfig['jante'] === null) {
+            that.changeColor(slug);
+          }
+
+          else {
+            let configJante = that.currentConfig['jante'];
+            let theSlug = slug + '_' + configJante 
+            that.changeColor(theSlug);
+          }
+        })
+      }
+    }
+    optionClickJante() {
+      let optionButton = document.querySelectorAll('.config__term__item__adds--jante');
+      let sizeOption =  optionButton.length;
+      let that = this;
+      for(let i = 0; i < sizeOption; i++ ) {
+        optionButton[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          let slug = this.getAttribute('data-slug');
+          if(slug === "jante_de_serie") {
+            slug = null;
+            let currentSlug = that.currentConfig['color'];
+            that.changeColor(currentSlug);
+          }
+          else {
+            let currentSlug = that.currentConfig['color'] + "_" + slug;
+            that.changeColor(currentSlug);
+          }
+          that.currentConfig['jante'] = slug;
+        })
+      }
+    }
+    checkClick() {
+      let sizeOption = this.checkOption.length;
+      let that = this;
+      for(let i = 0; i < sizeOption; i++ ) {
+        that.checkOption[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          let checkLoop = setInterval(function(){
+            let check = document.querySelector('.config__term__item');
+            if(check != null)
+            {
+              that.optionClick();
+              that.optionClickJante();
+              clearInterval(checkLoop)
+            }
+          }, 10);
+        })
+      }
     }
     init() 
     {
       if(this.main != null) {
-        this.loadingImage(this.index);
-        // this.event();
+        this.loadingImage(this.index, false, 0);
+        this.checkClick();
       }
     }
 }
 
 export default View360
-
-
-
-    // loadingCallBack(data) {
-    //   this.image.onload = function()
-    //   {
-    //      data.load = true;
-    //      console.log('fini mec');
-    //   }
-    //   this.index++
-    //   if(this.index < sophisto_grey_blue.sortKey.length -1) {
-    //     this.loadingImage(this.index)
-    //   }
-    //   else {
-    //     console.log('fini la boucle')
-    //   }
-    // }
-    // loadingImage() {
-    //   let that = this;
-    //   for (let key in sophisto_grey_blue) {
-    //     that.image.src = sophisto_grey_blue[key].url;
-    //     this.loadingCallBack(sophisto_grey_blue[key]);
-    //   }
-    //   // console.log(sophisto_grey_blue[1])
-    // }

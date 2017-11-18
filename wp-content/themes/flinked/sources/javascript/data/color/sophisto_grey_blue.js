@@ -182,6 +182,11 @@ const sophisto_grey_blue = {
     state: "unactive",
     load: false,
   },
+  sophisto_grey_blue_37: {
+    url: sophisto_grey_blue_baseUrl + "37.jpeg",
+    state: "unactive",
+    load: false,
+  },
 }
 
 
