@@ -3,7 +3,8 @@ import Slider from './Slider.js'
 import BurgerMenu from './BurgerMenu.js'
 import ajax from './ajax.js'
 import NavConfig from './NavConfig.js'
-import View360 from './View360.js'
+import View360  from './View360.js'
+// import CurrentConfig from './CurrentConfig.js'
 
 
 function init() {
@@ -43,6 +44,13 @@ function init() {
 
   let view360 = new View360();
   view360.init();
+
+  // /**
+  // * save the current config
+  // */
+
+  // let currentConfig = new CurrentConfig();
+  // currentConfig.init();
   
 }
 

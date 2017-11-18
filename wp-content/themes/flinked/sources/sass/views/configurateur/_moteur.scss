@@ -1,0 +1,34 @@
+.config__term__item--moteur {
+  width: 100%;
+  margin-bottom: 65px;
+  padding-left: em(60);
+
+    .config__term__item__icone {
+      width: 30%;
+    }
+
+    .config__term__item__title {
+      margin-bottom: em(18);
+      color: $blue;
+    }
+
+    .config__term__item__technique__item {
+      font-size: em(16);
+      margin: 0;
+      margin-bottom: 8px;
+      &:nth-child(1) {
+        color: $blue;
+      }
+    }
+
+    .config__term__item__price {
+      margin-top: em(22);
+    }
+
+    &.config__term__item--active {
+
+      &::after {
+        top: em(35);
+      }
+    }
+}

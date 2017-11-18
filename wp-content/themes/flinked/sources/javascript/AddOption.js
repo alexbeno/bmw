@@ -1,3 +1,5 @@
+import CurrentConfig from './CurrentConfig.js'
+
 class AddOption
 {
     /**
@@ -108,6 +110,7 @@ class AddOption
     update( news ) {
       this.updatePrice = this.basePrice;
       this.updatePrice += news;
+      CurrentConfig['price'] = this.updatePrice;
       this.displayNewPrice();
     }
 
@@ -123,10 +126,18 @@ class AddOption
       this.update(this.tempPrice);
     }
 
-    saveOption(optionCat, price, name, slug) {
+    saveOption(optionCat, price, name, slug, taxo) {
       this.option[optionCat].price = price;
       this.option[optionCat].name = name;
       this.option[optionCat].slug = slug;
+
+      CurrentConfig["listOfOption"][optionCat].price = price;
+      CurrentConfig["listOfOption"][optionCat].name = name;
+      CurrentConfig["listOfOption"][optionCat].slug = slug;
+
+      if(taxo != "jante" && taxo != "color" && taxo != null) {
+        CurrentConfig[taxo] = slug;
+      }
       this.getTabPrice();
     }
 
@@ -151,8 +162,10 @@ class AddOption
           let optionPrice = parseInt(this.getAttribute('data-price'));
           let optionName  = this.getAttribute('data-title');
           let optionSlug  = this.getAttribute('data-slug');
+          let saveConfig = this.getAttribute('data-taxo');
 
-          that.saveOption(optionCat, optionPrice, optionName, optionSlug );
+
+          that.saveOption(optionCat, optionPrice, optionName, optionSlug, saveConfig );
         })
       }
     }

@@ -1,3 +1,6 @@
+import CurrentConfig from './CurrentConfig.js'
+
+
 import sophisto_grey_blue from './data/color/sophisto_grey_blue.js'
 import sophisto_grey from './data/color/sophisto_grey.js'
 import ionic_silver from './data/color/ionic_silver.js'
@@ -27,11 +30,6 @@ class View360
       this.index = 0;
       this.indexDrag = 0;
       this.theviewstart = false;
-
-      this.currentConfig = {
-        jante: null,
-        color: "sophisto_grey_blue",
-      }
 
       this.colorAllOtion = {
         sophisto_grey : {
@@ -82,8 +80,14 @@ class View360
       this.colorDataText = this.currentKey.slug;
       this.size = this.currentKey.obj.sortKey.length;
     }
-    initDisplay(index) {     
-      let current = this.colorData[this.colorData.sortKey[index - 1]].url;
+    initDisplay(index) {
+      let current;
+      if(this.theviewstart === true) {
+        current = this.colorData[this.colorData.sortKey[index - 1]].url;
+      }
+      else {
+        current = this.colorData[this.colorData.sortKey[13]].url;
+      }
       this.container.setAttribute('src', current)
     }
     loadingCallBack(data, index) {
@@ -220,14 +224,13 @@ class View360
         optionButton[i].addEventListener('click', function(e) {
           e.preventDefault();
           let slug = this.getAttribute('data-slug');
-          that.currentConfig['color'] = slug;
-
-          if(that.currentConfig['jante'] === null) {
+          CurrentConfig['color'] = slug;
+          if(CurrentConfig['jante'] === null) {
             that.changeColor(slug);
           }
 
           else {
-            let configJante = that.currentConfig['jante'];
+            let configJante = CurrentConfig['jante'];
             let theSlug = slug + '_' + configJante 
             that.changeColor(theSlug);
           }
@@ -244,14 +247,14 @@ class View360
           let slug = this.getAttribute('data-slug');
           if(slug === "jante_de_serie") {
             slug = null;
-            let currentSlug = that.currentConfig['color'];
+            let currentSlug = CurrentConfig['color'];
             that.changeColor(currentSlug);
           }
           else {
-            let currentSlug = that.currentConfig['color'] + "_" + slug;
+            let currentSlug = CurrentConfig['color'] + "_" + slug;
             that.changeColor(currentSlug);
           }
-          that.currentConfig['jante'] = slug;
+          CurrentConfig['jante'] = slug;
         })
       }
     }
@@ -283,3 +286,4 @@ class View360
 }
 
 export default View360
+// export {View360, CurrentConfig }
