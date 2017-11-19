@@ -1,30 +1,31 @@
 import CurrentConfig from './CurrentConfig.js'
 
-
+/**
+ * color + jante 1
+ */
 import sophisto_grey_blue from './data/color/sophisto_grey_blue.js'
 import sophisto_grey from './data/color/sophisto_grey.js'
 import ionic_silver from './data/color/ionic_silver.js'
 import crystal_white_grey from './data/color/crystal_white_grey.js'
 import crystal_white_blue from './data/color/crystal_white_blue.js'
 
-
+/**
+ * jante 2
+ */
 import crystal_white_blue_jante_625_turbine from './data/jante/crystal_white_blue_jante_625_turbine.js'
 import ionic_silver_jante_625_turbine from './data/jante/ionic_silver_jante_625_turbine.js'
 import sophisto_grey_blue_jante_625_turbine from './data/jante/sophisto_grey_blue_jante_625_turbine.js'
 import sophisto_grey_jante_625_turbine from './data/jante/sophisto_grey_jante_625_turbine.js'
 import crystal_white_grey_jante_625_turbine from './data/jante/crystal_white_grey_jante_625_turbine.js'
 
+/**
+ * jante 3
+ */
 import sophisto_grey_blue_jante_470_rayons from './data/jante/sophisto_grey_blue_jante_470_rayons.js'
 import sophisto_grey_jante_470_rayons from './data/jante/sophisto_grey_jante_470_rayons.js'
 import crystal_white_grey_jante_470_rayons from './data/jante/crystal_white_grey_jante_470_rayons.js'
 import ionic_silver_jante_470_rayons from './data/jante/ionic_silver_jante_470_rayons.js'
 import crystal_white_blue_jante_470_rayons from './data/jante/crystal_white_blue_jante_470_rayons.js'
-
-//sophisto_grey_blue_jante_470_rayons
-//sophisto_grey_jante_470_rayons
-//crystal_white_grey_jante_470_rayons
-//ionic_silver_jante_470_rayons
-//crystal_white_blue_jante_470_rayons
 
 class View360
 {
@@ -113,6 +114,11 @@ class View360
       this.size = this.currentKey.obj.sortKey.length;
     }
     initDisplay(index) {
+      /**
+       * load the view without 360 display
+       * @param index = index of the first image
+      */
+
       let current;
       if(this.theviewstart === true) {
         current = this.colorData[this.colorData.sortKey[index - 1]].url;
@@ -122,7 +128,17 @@ class View360
       }
       this.container.setAttribute('src', current)
     }
+
     loadingCallBack(data, index) {
+      /**
+       * verfication when image is finish to load for display it
+       * @param index = index of the current image
+       * @param data = global object of the current image
+       * @function loadingImage();
+       * @function initDisplay();
+       * @function startView();
+      */
+
       let that = this;
       this.image.onload = function()
       {
@@ -142,6 +158,14 @@ class View360
       }
     }
     loadingImage(index, change, current) {
+      /**
+       * recusive function for load all image for the 360 view
+       * @param index = index of the current image 
+       * @param change = condition for know if they are a color change
+       * @param current = index of image to display first
+       * @function loadingCallBack();
+       */
+
       let currentKey = this.colorData.sortKey[index];
       this.image.src = this.colorData[this.colorData.sortKey[index]].url;
 
@@ -155,9 +179,21 @@ class View360
       this.index++
     }
     update(image) {
+      /**
+       * update image url
+       * @param image = image to load
+      */
+
       this.container.setAttribute('src', image)
     }
+
     auto() {
+      /**
+      * auto 360 view
+      * @function update();
+      * @function event();
+      */
+
       let that = this;
       let index = 16;
       let inter = setInterval(function(){
@@ -172,7 +208,14 @@ class View360
         that.update(that.colorData[current].url)
       }, 100);
     }
+
     dragCallback(x) {
+      /**
+       * update image when drag event was done
+       * @param x = for know the direction of the drag event
+       * @function update();
+       */
+
       if(x < 0) {
         if(this.indexDrag >= this.size )
         {
@@ -194,7 +237,13 @@ class View360
       let current = this.colorDataText + this.indexDrag
       this.update(this.colorData[current].url)
     }
+
     event () {
+      /**
+       * event for detect the drag
+       * @function dragCallback();
+       */
+
       let that = this;
       let element = document.querySelector('.config__car__image');
       let x = 0;
@@ -225,7 +274,12 @@ class View360
         }
       });
     }
+
     startView() {
+      /**
+       * launch the 360 auto view
+       * @function auto()
+       */
       let that = this;
       this.button.addEventListener('click', function(e){
         if(that.theviewstart === false)   {
@@ -235,6 +289,13 @@ class View360
       });
     }
     changeColor(slug) {
+      /**
+       * change the current color config
+       * @param slug = slug of the modification
+       * @function loadingimage();
+       * @function initDisplay();
+       */
+
       this.currentKey = this.colorAllOtion[slug];
       this.index = 0;
       this.colorData = this.currentKey.obj;
@@ -249,6 +310,11 @@ class View360
       }
     }
     optionClick() {
+      /**
+       * click event for option selection
+       * @function changeColor();
+       */
+
       let optionButton = document.querySelectorAll('.config__term__item__adds--color');
       let sizeOption =  optionButton.length;
       let that = this;
@@ -269,7 +335,13 @@ class View360
         })
       }
     }
+
     optionClickJante() {
+      /**
+       * click event for option selection
+       * @function changeColor();
+       */
+
       let optionButton = document.querySelectorAll('.config__term__item__adds--jante');
       let sizeOption =  optionButton.length;
       let that = this;
@@ -290,7 +362,13 @@ class View360
         })
       }
     }
+
     checkClick() {
+      /**
+       * check when the click can be done (after ajax load)
+       * @function optionClick();
+       * @function optionClickJante();
+       */
       let sizeOption = this.checkOption.length;
       let that = this;
       for(let i = 0; i < sizeOption; i++ ) {
