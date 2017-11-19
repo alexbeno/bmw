@@ -14,6 +14,18 @@ import sophisto_grey_blue_jante_625_turbine from './data/jante/sophisto_grey_blu
 import sophisto_grey_jante_625_turbine from './data/jante/sophisto_grey_jante_625_turbine.js'
 import crystal_white_grey_jante_625_turbine from './data/jante/crystal_white_grey_jante_625_turbine.js'
 
+import sophisto_grey_blue_jante_470_rayons from './data/jante/sophisto_grey_blue_jante_470_rayons.js'
+import sophisto_grey_jante_470_rayons from './data/jante/sophisto_grey_jante_470_rayons.js'
+import crystal_white_grey_jante_470_rayons from './data/jante/crystal_white_grey_jante_470_rayons.js'
+import ionic_silver_jante_470_rayons from './data/jante/ionic_silver_jante_470_rayons.js'
+import crystal_white_blue_jante_470_rayons from './data/jante/crystal_white_blue_jante_470_rayons.js'
+
+//sophisto_grey_blue_jante_470_rayons
+//sophisto_grey_jante_470_rayons
+//crystal_white_grey_jante_470_rayons
+//ionic_silver_jante_470_rayons
+//crystal_white_blue_jante_470_rayons
+
 class View360
 {
     /**
@@ -71,6 +83,26 @@ class View360
         crystal_white_grey_jante_625_turbine: {
           obj: crystal_white_grey_jante_625_turbine,
           slug: "crystal_white_grey_jante_625_turbine_",
+        },
+        sophisto_grey_blue_jante_470_rayons: {
+          obj: sophisto_grey_blue_jante_470_rayons,
+          slug: "sophisto_grey_blue_jante_470_rayons_",
+        },
+        sophisto_grey_jante_470_rayons: {
+          obj: sophisto_grey_jante_470_rayons,
+          slug: "sophisto_grey_jante_470_rayons_",
+        },
+        crystal_white_grey_jante_470_rayons: {
+          obj: crystal_white_grey_jante_470_rayons,
+          slug: "crystal_white_grey_jante_470_rayons_",
+        },
+        ionic_silver_jante_470_rayons: {
+          obj: ionic_silver_jante_470_rayons,
+          slug: "ionic_silver_jante_470_rayons_",
+        },
+        crystal_white_blue_jante_470_rayons: {
+          obj: crystal_white_blue_jante_470_rayons,
+          slug: "crystal_white_blue_jante_470_rayons_",
         },
       }
 

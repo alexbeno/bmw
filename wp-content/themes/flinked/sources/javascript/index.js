@@ -4,7 +4,7 @@ import BurgerMenu from './BurgerMenu.js'
 import ajax from './ajax.js'
 import NavConfig from './NavConfig.js'
 import View360  from './View360.js'
-// import CurrentConfig from './CurrentConfig.js'
+import Devis  from './Devis.js'
 
 
 function init() {
@@ -45,12 +45,13 @@ function init() {
   let view360 = new View360();
   view360.init();
 
-  // /**
-  // * save the current config
-  // */
+  /**
+  * pop up devis
+  */
 
-  // let currentConfig = new CurrentConfig();
-  // currentConfig.init();
+  let devis = new Devis();
+  devis.init();
+
   
 }
 
