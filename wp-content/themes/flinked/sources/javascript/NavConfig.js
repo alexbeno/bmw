@@ -13,7 +13,6 @@ class NavColor
     }
     select() {
       let activeItem = document.querySelector('.config__nav__sub--active');
-
       if(activeItem === null) {
         let size = this.nav.length;
         let that = this;
@@ -21,6 +20,7 @@ class NavColor
         for(let i = 0; i < size; i++ ) {
           that.nav[i].addEventListener('click', function(e) {
             e.preventDefault();
+
             if(this.childNodes[3]) {
               let current = this.childNodes[3];
               this.childNodes[3].classList.add('config__nav__sub--active');

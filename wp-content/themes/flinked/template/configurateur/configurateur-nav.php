@@ -109,7 +109,7 @@ $term_option = get_terms( 'option', array(
   <div class="config__nav__container">
   <?php if(wp_count_terms( 'interieur' ) > 1) { ?>
 
-    <div class="config__nav__item">
+    <div class="config__nav__item config__nav__item--interieur">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/int.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__link">Intérieur</a>
     </div>
@@ -134,7 +134,7 @@ $term_option = get_terms( 'option', array(
         $current = $term->name;
         $slug = $term->slug;
     ?>
-    <div class="config__nav__item">
+    <div class="config__nav__item config__nav__item--interieur">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/int.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="interieur" data-slug="<?= $slug ?>" ><?= $current ?></a>
     </div>

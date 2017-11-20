@@ -1,35 +1,20 @@
-.config__term__item--moteur {
-  width: 100%;
+.config__term__item--interieur {
   margin-bottom: 65px;
-  padding-left: em(60);
-
-  .config__term__item__icone {
-    width: 30%;
-  }
 
   .config__term__item__title {
-    margin-bottom: em(18);
-    color: $blue;
-  }
-
-  .config__term__item__technique__item {
-    font-size: em(16);
-    margin: 0;
-    margin-bottom: 8px;
-    &:nth-child(1) {
-      color: $blue;
-    }
+    margin-bottom: em(13);
+    padding-left: em(20);
   }
 
   .config__term__item__price {
-    margin-top: em(22);
+    padding-left: em(20);
   }
 
   &::after {
     @include pseudo();
-    top: em(35);
-    left: em(15);
-    width: 100%;
+    top: 69%;
+    left: em(0);
+    width: em(12);
     height: em(15);
     background-image: url('../../../../dist/assets/image/Selecteur_Blue_Unselected.svg');
     background-size: contain;
@@ -39,8 +24,19 @@
   &.config__term__item--active {
 
     &::after {
-      top: em(35);
+      top: 69%;
+      left: em(0);
+      width: em(12);
       background-image: url('../../../../dist/assets/image/Selecteur_Blue_selected.svg');
     }
   }
+}
+
+.config__term__item--interieur__view {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 90%;
+  height: auto;
+  z-index: 10;
 }

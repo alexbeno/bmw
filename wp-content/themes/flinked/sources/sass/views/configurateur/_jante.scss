@@ -3,11 +3,26 @@
   text-align: center;
   margin-bottom: 65px;
 
-    .config__term__item__icone {
-      width: 30%;
+  .config__term__item__icone {
+    width: 30%;
+    opacity: 0.5;
+    transition: all ease 0.3s;
+  }
+
+  .config__term__item__title {
+    margin-bottom: em(26);
+  }
+
+  &.config__term__item--active {
+
+    &::after {
+      top: em(15);
+      background-image: url('../../../../dist/assets/image/Selecteur_Blue_selected.svg');
     }
 
-    .config__term__item__title {
-      margin-bottom: em(26);
+    .config__term__item__icone {
+      opacity: 1;
+      transition: all ease 0.3s;
     }
+  }
 }

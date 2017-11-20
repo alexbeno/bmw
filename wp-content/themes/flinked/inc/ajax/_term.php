@@ -31,6 +31,12 @@
             else if($slug === "moteur") {
               get_template_part('template/configurateur/components/configurateur-components-moteur');
             }
+            else if($slug === "pack") {
+              get_template_part('template/configurateur/components/configurateur-components-pack');
+            }
+            else if($slug === "interieur") {
+              get_template_part('template/configurateur/components/configurateur-components-interieur');
+            }
         }
         /* Restore original Post Data */
         wp_reset_postdata();

@@ -2,6 +2,7 @@
 * navigation of configurateur
 */
 import AddOption from './../AddOption.js'
+import Interieur  from './../Interieur.js'
 
 
 var returns = function() {
@@ -38,6 +39,9 @@ var ajax = function () {
     let addOption = new AddOption();
     addOption.init();
 
+    let interieur = new Interieur();
+    interieur.init();
+
     $('.config__nav__item__sub__link').on('click', function(e){
       e.preventDefault();
       $('.config__term__item').remove();
@@ -60,6 +64,8 @@ var ajax = function () {
           function(response){
             response_section.append(response);
             addOption.clickEvent();
+            interieur.destroyInterieur();
+            interieur.clickEvent();
             returns();
           }
       );
