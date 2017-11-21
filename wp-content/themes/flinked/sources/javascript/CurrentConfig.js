@@ -40,37 +40,11 @@ const CurrentConfig = {
       name: null,
       slug: null,
     },
-
-    option_exterieur: {
-      section: 'option exterieur',
+    option: {
+      item: [],
+      section: "option",
       price: 0,
-      name: null,
-      slug: null,
-    },
-    option_interieur: {
-      section: 'option interieur',
-      price: 0,
-      name: null,
-      slug: null,
-    },
-    option_fonctionnel: {
-      section: 'option fonctionnel',
-      price: 0,
-      name: null,
-      slug: null,
-    },
-    option_technologies: {
-      section: 'option technologies',
-      price: 0,
-      name: null,
-      slug: null,
-    },
-    option_jantes: {
-      section: 'option jante',
-      price: 0,
-      name: null,
-      slug: null,
-    },
+    }
   }
   
 }

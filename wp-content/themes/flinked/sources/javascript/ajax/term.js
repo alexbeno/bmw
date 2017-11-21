@@ -47,7 +47,9 @@ var ajax = function () {
       $('.config__term__item').remove();
       let mainSlug = $(this).attr('data-mainSlug');
       let slug = $(this).attr('data-slug');
-
+      if(slug === undefined) {
+        slug = "noSlug"
+      }
       $('.config__term').addClass('config__term--active');
       setTimeout(function(){
         $('.config__term').css('transform', 'translateX(0)');

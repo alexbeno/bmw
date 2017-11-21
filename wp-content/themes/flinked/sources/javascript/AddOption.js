@@ -46,32 +46,10 @@ class AddOption
           name: "",
           slug: "",
         },
-
-        option_exterieur: {
+        option: {
+          item: [],
           price: 0,
-          name: "",
-          slug: "",
-        },
-        option_interieur: {
-          price: 0,
-          name: "",
-          slug: "",
-        },
-        option_fonctionnel: {
-          price: 0,
-          name: "",
-          slug: "",
-        },
-        option_technologies: {
-          price: 0,
-          name: "",
-          slug: "",
-        },
-        option_jantes: {
-          price: 0,
-          name: "",
-          slug: "",
-        },
+        }
       };
     }
 
@@ -141,6 +119,51 @@ class AddOption
       this.getTabPrice();
     }
 
+    saveOptionArray(optionCats, prices, names, slugs, taxos) {
+      let arrayOption = { price: prices, name: names, slug: slugs }
+      this.option["option"].item.push(arrayOption);
+      CurrentConfig["listOfOption"]["option"].item.push(arrayOption);
+      this.getPriceArray();        
+    }
+
+    checkOption(optionCats, prices, names, slugs, taxos) {
+      let size = this.option["option"].item.length;
+      let present = false;
+      let unsave = 0;
+      if(size != 0) {
+        for (let index = 0; index < size; index++) {
+          const element = this.option["option"].item[index].slug;
+          if(element === slugs) {
+            present = true;
+            unsave = index;
+          }   
+        }
+        if(present === false) {
+          this.saveOptionArray(optionCats, prices, names, slugs, taxos)
+        }
+        else {
+          this.option["option"].item.splice(unsave, 1);
+          CurrentConfig["listOfOption"]["option"].item.splice(unsave, 1);
+          this.getPriceArray();  
+        }
+      }
+      else {
+        this.saveOptionArray(optionCats, prices, names, slugs, taxos)
+      }
+    }
+
+    getPriceArray() {
+      let size = this.option["option"].item.length;
+      let totalOptionPrice = 0;
+      for (let index = 0; index < size; index++) {
+        const element = this.option["option"].item[index].price;
+        totalOptionPrice +=  element;
+        
+      }
+      this.option["option"].price = totalOptionPrice;
+      this.getTabPrice();
+    }
+
     clickEvent () {
       let navButton = document.querySelectorAll('.config__nav__item__sub__link');
       let optionButton = document.querySelectorAll('.config__term__item__add');
@@ -164,8 +187,12 @@ class AddOption
           let optionSlug  = this.getAttribute('data-slug');
           let saveConfig = this.getAttribute('data-taxo');
 
-
-          that.saveOption(optionCat, optionPrice, optionName, optionSlug, saveConfig );
+          if(this.getAttribute('data-option') === "option") {
+            that.checkOption(optionCat, optionPrice, optionName, optionSlug, saveConfig );
+          }
+          else {
+            that.saveOption(optionCat, optionPrice, optionName, optionSlug, saveConfig );
+          }
         })
       }
     }

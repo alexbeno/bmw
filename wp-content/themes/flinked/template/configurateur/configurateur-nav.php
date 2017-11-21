@@ -181,37 +181,10 @@ $term_option = get_terms( 'option', array(
 <!-- [options items] -->
 
   <div class="config__nav__container">
-  <?php if(wp_count_terms( 'option' ) > 1) { ?>
     <div class="config__nav__item">
       <img src="<?= IMAGES_URL ?>/configurateur/menu/option.jpg" alt="moteur" class="config__nav__item__bg">
-      <a href="#" class="config__nav__item__link">Options</a>
+      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="option" >option</a>
     </div>
-    <div class="config__nav__sub">
-      <?php 
-      foreach( $term_option as $term ) {
-        $current = $term->name;
-        $slug = $term->slug;
-        ?>
-          <div class="config__nav__item__sub__item config__nav__item">
-            <img src="<?= IMAGES_URL ?>/configurateur/menu/moteur.jpg" alt="moteur" class="config__nav__item__sub__item_img config__nav__item__bg ">
-            <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="option" data-slug="<?= $slug ?>" ><?= $current ?></a>
-          </div>
-      <?php         
-      }
-      ?>
-    </div>
-    <?php 
-    } 
-    else { 
-      foreach( $term_option as $term ) {
-        $current = $term->name;
-        $slug = $term->slug;
-    ?>
-    <div class="config__nav__item">
-      <img src="<?= IMAGES_URL ?>/configurateur/menu/option.jpg" alt="moteur" class="config__nav__item__bg">
-      <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="option" data-slug="<?= $slug ?>" ><?= $current ?></a>
-    </div>
-    <?php }} ?>
   </div>
   <div class="config__term">
     <div class="config__term__container">

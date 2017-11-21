@@ -45,18 +45,40 @@ class Devis
 
     }
 
+    saveOptionArray(config) {
+      let size = config["option"].item.length;
+      let that = this;
+      for (let index = 0; index < size; index++) {
+        console.log('yo')
+        const element = config["option"].item[index];
+        let section = config["option"].section;
+        let name = element['name'];
+        let price = element['price'];
+        let slug = element['slug']; 
+
+        if(slug != null) {
+          that.fillConfig(section, name, price, slug)
+        }
+      }
+    }
+
     getConfig() {
       let config = CurrentConfig['listOfOption'];
       let that = this;
       for (let key in config) {
 
-        let section = config[key]['section'];
-        let name = config[key]['name'];
-        let price = config[key]['price'];
-        let slug = config[key]['slug'];
-
-        if(slug != null) {
-          that.fillConfig(section, name, price, slug)
+        if(key === "option") {
+          that.saveOptionArray(config);
+        }
+        else {
+          let section = config[key]['section'];
+          let name = config[key]['name'];
+          let price = config[key]['price'];
+          let slug = config[key]['slug'];
+  
+          if(slug != null) {
+            that.fillConfig(section, name, price, slug)
+          }
         }
       }
     }

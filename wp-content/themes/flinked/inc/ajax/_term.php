@@ -6,16 +6,36 @@
     global $wpdb, $_POST;
     $slug = $_POST['slug'];
     $mainSlug = $_POST['mainSlug'];
-    $args = array(
-      'post_type' => 'configurateur',
-      'tax_query' => array(
-        array(
-          'taxonomy' =>  $mainSlug,
-          'field'    => 'slug',
-          'terms'    => $slug,
+    if($slug !== "noSlug") {
+      $args = array(
+        'post_type' => 'configurateur',
+        'tax_query' => array(
+          array(
+            'taxonomy' =>  $mainSlug,
+            'field'    => 'slug',
+            'terms'    => $slug,
+          ),
         ),
-      ),
-    );
+      );
+    }
+    else {
+
+      // get all terms in the taxonomy
+      $terms = get_terms( $mainSlug ); 
+      // convert array of term objects to array of term IDs
+      $term_ids = wp_list_pluck( $terms, 'slug' );
+
+      $args = array(
+        'post_type' => 'configurateur',
+        'tax_query' => array(
+          array(
+            'taxonomy' =>  $mainSlug,
+            'field'    => 'slug',
+            'terms'    => $term_ids,
+          ),
+        ),
+      );
+    }
     $the_query = new WP_Query( $args );
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
@@ -36,6 +56,9 @@
             }
             else if($slug === "interieur") {
               get_template_part('template/configurateur/components/configurateur-components-interieur');
+            }
+            else if($mainSlug === "option") {
+              get_template_part('template/configurateur/components/configurateur-components-option');
             }
         }
         /* Restore original Post Data */
