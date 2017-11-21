@@ -1,0 +1,40 @@
+.config__term__item--option {
+  margin-bottom: 65px;
+
+  .config__term__item__title {
+    margin-bottom: em(13);
+    padding-left: em(20);
+  }
+
+  .config__term__item__price {
+    padding-left: em(20);
+  }
+
+  &::after {
+    @include pseudo();
+    top: 69%;
+    left: em(0);
+    width: em(12);
+    height: em(15);
+    background-image: url('../../../../dist/assets/image/Selecteur_Blue_Unselected.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &.config__term__item--active {
+
+    &::after {
+      top: 69%;
+      left: em(0);
+      width: em(12);
+      background-image: url('../../../../dist/assets/image/Selecteur_Blue_selected.svg');
+    }
+  }
+
+  &.config__term__item--option--serie {
+
+    &::after {
+      background-image: url('../../../../dist/assets/image/Selecteur_Grey.svg');
+    }
+  }
+}

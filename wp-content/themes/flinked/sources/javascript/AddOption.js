@@ -126,7 +126,7 @@ class AddOption
       this.getPriceArray();        
     }
 
-    checkOption(optionCats, prices, names, slugs, taxos) {
+    checkOption(optionCats, prices, names, slugs, taxos, classSelect) {
       let size = this.option["option"].item.length;
       let present = false;
       let unsave = 0;
@@ -144,6 +144,8 @@ class AddOption
         else {
           this.option["option"].item.splice(unsave, 1);
           CurrentConfig["listOfOption"]["option"].item.splice(unsave, 1);
+          classSelect.classList.remove('config__term__item--active');
+
           this.getPriceArray();  
         }
       }
@@ -175,9 +177,12 @@ class AddOption
         optionButton[i].addEventListener('click', function(e) {
           e.preventDefault();
 
-          let activeItem = document.querySelector('.config__term__item--active');
-          if(activeItem != null) {
-            activeItem.classList.remove('config__term__item--active')
+
+          if(this.getAttribute('data-option') === null) {
+            let activeItem = document.querySelector('.config__term__item--active');
+            if(activeItem != null) {
+              activeItem.classList.remove('config__term__item--active')
+            }
           }
 
           this.classList.add('config__term__item--active');
@@ -188,7 +193,7 @@ class AddOption
           let saveConfig = this.getAttribute('data-taxo');
 
           if(this.getAttribute('data-option') === "option") {
-            that.checkOption(optionCat, optionPrice, optionName, optionSlug, saveConfig );
+            that.checkOption(optionCat, optionPrice, optionName, optionSlug, saveConfig, this );
           }
           else {
             that.saveOption(optionCat, optionPrice, optionName, optionSlug, saveConfig );
