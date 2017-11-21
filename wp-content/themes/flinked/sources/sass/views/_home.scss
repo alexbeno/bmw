@@ -1,0 +1,76 @@
+.home {
+    &__design {
+        margin-top: -10px;
+        padding-left: $center;
+        background: $white;
+        position: relative;
+        z-index: 10;
+        @include flex($justify: space-between);
+
+        @include query(1200px) {
+            padding-left: $centerTab;
+        }
+
+        @include query(850px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__container {
+            width: 55%;
+            padding-top: em(110);
+
+            @include query(950px) {
+                padding-top: em(30);
+            }
+
+            @include query(850px) {
+                width: 90%;
+            }
+        }
+        &__title {
+            text-align: left;
+            &__up {
+
+            }
+            &__main {
+
+            }
+        }
+        &__content {
+            margin-top: 60px;
+            &__title {
+
+            }
+            &__text {
+
+            }
+        }
+        &__slider {
+
+        }
+    }
+    &__header {
+        position: relative;
+        &__img {
+
+        }
+        &__container {
+            max-width: 700px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 117px;
+        }
+        &__title {
+            margin-left: -5px;
+            font-size: 80px;
+            font-family: $font;
+            color: $white;
+            font-weight: $bold;
+            line-height: 0.975;
+            &__title__up {
+
+            }
+        }
+    }
+}

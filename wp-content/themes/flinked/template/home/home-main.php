@@ -6,6 +6,10 @@ $home_title = get_field($prefixe.'title');
 
 ?>
 
-<img src="<?php echo $home_header; ?>" alt="">
-<h1 class="block__header__content__title"><?php echo $home_title; ?></h1>
-<h4 class="title__up"><?php echo $home_upTitle; ?></h4>
+<div class="home__header">
+    <img class="home__header__img" src="<?php echo $home_header; ?>" alt="">
+    <div class="home__header__container">
+        <h4 class="home__header__title__up title__up"><?php echo $home_upTitle; ?></h4>
+        <h1 class="home__header__title"><?php echo $home_title; ?></h1>
+    </div>
+</div>

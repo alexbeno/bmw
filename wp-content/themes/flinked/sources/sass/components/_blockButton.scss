@@ -1,0 +1,13 @@
+.btn {
+  font-size: $size-btn;
+  font-family: $font;
+  color: $blue;
+  font-weight: $semi-bold;
+  text-decoration: none;
+  position: relative;
+  &::after {
+    @include pseudo($content: '͢');
+    top: 0;
+    right: -30px;
+  }
+}
