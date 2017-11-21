@@ -3,11 +3,16 @@
 }
 
 .config__nav {
+  // width: 330px;
+  // height: auto;
+  // position: fixed;
+  // right: 0;
+  // top: em(100);
   width: 330px;
   height: auto;
-  position: fixed;
+  position: absolute;
   right: 0;
-  top: em(100);
+  top: em(30);
 }
 
 .config__nav__histo {

@@ -8,12 +8,16 @@ class Devis
     constructor( options )
     {
       this.main = document.querySelector('.config__pop');
+      this.mainitem = document.querySelector('.config__pop__mainItem');
+      this.mainoption = document.querySelector('.config__pop__mainOption');
+      this.priceItem = document.querySelector('.config__pop__choix__buy__price__span');
+      this.global= document.querySelector('.config');
       this.button = document.querySelector('.config__price__devis')
-      this.backward = document.querySelector('.config__opacity')
+      this.close;
     }
 
     clean() {
-      let item = document.querySelectorAll('.devis_item-container');
+      let item = document.querySelectorAll('.devis_item-container:');
       for (let index = 0; index <item.length; index++) {
         item[index].remove();
         
@@ -25,24 +29,43 @@ class Devis
       item.container = document.createElement('div')
       item.section = document.createElement('p')
       item.name = document.createElement('p')
-      item.price = document.createElement('p')
 
       item.container.classList.add('devis_item-container')
-      item.name.classList.add('devis_item-container_item')
-      item.price.classList.add('devis_item-container_item')
-      item.section.classList.add('devis_item-container_item')
+      item.name.classList.add('devis_item-container_name')
+      item.section.classList.add('devis_item-container_section')
 
       item.name.innerText = name
-      item.price.innerText = price
       item.section.innerText = section
 
       item.name.setAttribute('data-slug', slug);
 
-      this.main.appendChild(item.container)
+      this.mainitem.appendChild(item.container)
       item.container.appendChild(item.section)
       item.container.appendChild(item.name)
-      item.container.appendChild(item.price)
 
+    }
+
+    fillOption(name, price, slug) {
+      let item = {};
+      item.container = document.createElement('div')
+      item.section = document.createElement('p')
+      item.name = document.createElement('p')
+
+      item.container.classList.add('devis_item-containerOption')
+      item.name.classList.add('devis_item-containerOption_name')
+      item.section.classList.add('devis_item-containerOption_section')
+
+      item.name.innerText = name
+
+      item.name.setAttribute('data-slug', slug);
+
+      this.mainoption.appendChild(item.container)
+      item.container.appendChild(item.name)
+    }
+
+    fillPrice() {
+      let priceToInsert = Intl.NumberFormat().format(CurrentConfig.price) + ',00'; 
+      this.priceItem.innerText = priceToInsert;
     }
 
     saveOptionArray(config) {
@@ -51,13 +74,12 @@ class Devis
       for (let index = 0; index < size; index++) {
         console.log('yo')
         const element = config["option"].item[index];
-        let section = config["option"].section;
         let name = element['name'];
         let price = element['price'];
         let slug = element['slug']; 
 
         if(slug != null) {
-          that.fillConfig(section, name, price, slug)
+          that.fillOption(name, price, slug)
         }
       }
     }
@@ -86,15 +108,16 @@ class Devis
     show() {
       let that = this;
       this.main.classList.add('config__pop--active')
-      this.backward.classList.add('config__opacity--active')
+      this.global.classList.add('config--pop')
       setTimeout(function(){
         that.closes();
-        that.getConfig()
+        that.getConfig();
+        that.fillPrice();
       }, 200);
     }
     unshow() {
       this.main.classList.remove('config__pop--active')
-      this.backward.classList.remove('config__opacity--active')
+      this.global.classList.remove('config--pop')
       this.clean();
     }
     open() {
@@ -106,13 +129,14 @@ class Devis
     }
     closes() {
       let that = this;
-      let close = document.querySelector('.config__opacity--active')
-      if(close != null) {
-        close.addEventListener('click', function(e) {
+      this.close = document.querySelector('.config--pop')
+      this.close.addEventListener('click', function(e) {
+        if(that.close != null) {
           e.preventDefault();
           that.unshow();
-        })
-      }
+          that.close = null;
+        }
+      })
     }
     init() 
     {

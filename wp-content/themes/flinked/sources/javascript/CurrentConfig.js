@@ -5,7 +5,7 @@ const CurrentConfig = {
   interieur: null,
   pack: null,
   option: [],
-  price: 0,
+  price: 138950,
   listOfOption: {
     moteur_moteur: {
       section: 'moteur',
@@ -17,14 +17,14 @@ const CurrentConfig = {
     exterieur_teintes_exterieures: {
       section: 'teinte extérieure',
       price: 0,
-      name: null,
-      slug: null,
+      name: "sophisto grey blue",
+      slug: "sophisto_grey_blue",
     },
     exterieur_jantes: {
       section: 'jante',
       price: 0,
-      name: null,
-      slug: null,
+      name: 'Jantes en alliage leger profilées 20" style 444 TurbineS02G4',
+      slug: "jante_de_serie",
     },
 
     interieur_interieur: {
