@@ -10,7 +10,7 @@
   @include query(1200px) {
     padding: 0 $centerTab;
   }
-  @include query(950px) {
+  @include medium {
     padding: 0 $centerTab;
     display: none;
   }
@@ -39,7 +39,7 @@
           @include abutton($left: em(30), $up: em(15));
           background: $blue;
           border-radius: em(25);
-          text-transform: uppercase;
+          font-weight: $semi-bold;
         }
       }
     }
@@ -74,7 +74,7 @@
   background: $white;
   display: none;
   
-  @include query(950px) {
+  @include medium {
     display: flex;
   }
 }
@@ -129,7 +129,7 @@
           @include abutton($left: em(30), $up: em(15));
           background: $blue;
           border-radius: em(25);
-          text-transform: uppercase;
+          font-weight: $semi-bold;
         }
       }
     }

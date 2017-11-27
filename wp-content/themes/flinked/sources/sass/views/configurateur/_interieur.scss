@@ -1,6 +1,10 @@
 .config__term__item--interieur {
   margin-bottom: 65px;
 
+  @include medium {
+    width: 45%;
+  }
+
   .config__term__item__title {
     margin-bottom: em(13);
     padding-left: em(20);
@@ -39,4 +43,10 @@
   width: 90%;
   height: auto;
   z-index: 10;
+  @include medium {
+    position: absolute;
+    top: 46%;
+    left: 0;
+    width: 100%;
+  }
 }

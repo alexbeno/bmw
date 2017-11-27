@@ -4,6 +4,7 @@ import BurgerMenu from './BurgerMenu.js'
 import ajax from './ajax.js'
 import NavConfig from './NavConfig.js'
 import View360  from './View360.js'
+import MobilView  from './MobilView.js'
 import Devis  from './Devis.js'
 
 
@@ -35,15 +36,27 @@ function init() {
   * navigation of configurateur
   */
 
-  let navConfig = new NavConfig();
-  navConfig.init();
+  // let navConfig = new NavConfig();
+  // navConfig.init();
 
-  /**
-  * 360 views
-  */
+  if(window.innerWidth > 1025) {
+    /**
+    * 360 views
+    */
 
-  let view360 = new View360();
-  view360.init();
+    let view360 = new View360();
+    view360.init();
+  }
+
+  if(window.innerWidth <= 1126) {
+
+    /**
+    * mobil views
+    */
+
+    let mobilView = new MobilView();
+    mobilView.init();
+  }
 
   /**
   * pop up devis

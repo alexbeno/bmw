@@ -2,6 +2,10 @@
   width: 70%;
   height: auto;
   position: relative;
+
+  @include medium {
+    width: 100%;
+  }
 }
 
 
@@ -9,6 +13,19 @@
   width: 100%;
   height: auto;
   margin-left: -5%;
+  @include medium {
+    display: none;
+  }
+}
+
+.config__car__imageMobil {
+  display: none;
+  width: 140%;
+  height: auto;
+  margin-left: -30%;  
+  @include medium {
+    display: block;
+  }
 }
 
 .config__car__image--interieur {
@@ -22,26 +39,32 @@
   width: 100%;
   margin-top: em(60);
   @include flex();
+  @include medium {
+    margin-top: em(20);
+    width: 95%;
+    margin-left: 2.5%;
+    justify-content: space-between;
+  }
 }
 
 .config__price__text {
-  font-size: em(18);
+  font-size: em(12);
 }
 
 .config__price__item {
-  font-size: em(18);
+  font-size: em(12);
   font-weight: $bold;
   margin-left: 10px;
 }
 
 .config__price__devis {
-  @include abutton($left: em(20), $up: em(15));
+  @include abutton($left: em(10), $up: em(12));
   background: $blue;
   border-radius: em(25);
-  text-transform: uppercase;  
   text-decoration: none;
-  margin-left: em(40);
-  font-size: em(16);  
+  margin-left: em(10);
+  font-size: em(12);  
+  font-weight: $semi-bold;
 }
 
 .config__3D {
@@ -51,6 +74,9 @@
   right: 15px;
   top: 0;
   @include flex();
+  @include medium {
+    display: none;
+  }
 }
 
 .config__3D__image {

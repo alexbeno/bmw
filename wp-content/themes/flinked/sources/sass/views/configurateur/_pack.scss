@@ -1,5 +1,8 @@
 .config__term__item--pack {
   margin-bottom: 65px;
+  @include medium {
+    width: 45%;
+  }
 
   .config__term__item__title {
     margin-bottom: em(13);

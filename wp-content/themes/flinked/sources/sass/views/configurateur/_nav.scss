@@ -3,27 +3,29 @@
 }
 
 .config__nav {
-  // width: 330px;
-  // height: auto;
-  // position: fixed;
-  // right: 0;
-  // top: em(100);
   width: 330px;
   height: auto;
   position: absolute;
   right: 0;
   top: em(30);
+
+  @include medium {
+    position: relative;
+    width: 100%;
+    margin-top: -15%;
+  }
 }
 
 .config__nav__histo {
-  margin-bottom: em(15);
+  background: $white;
+  padding: 20px 0;
 }
 
 .config__nav__histo__arrow {
   width: em(18);
   height: auto;
   cursor: pointer;
-  opacity: 0.3;
+  opacity: 1;
   position: relative;
   z-index: 10;
 }
@@ -119,6 +121,12 @@
   background: white;
   overflow: scroll;
   transition: all $transition-bezier1 0.3s;
+  @include medium {
+    min-height: 150vh;
+    height: auto;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 

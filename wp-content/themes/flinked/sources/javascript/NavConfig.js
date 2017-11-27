@@ -20,15 +20,17 @@ class NavColor
         for(let i = 0; i < size; i++ ) {
           that.nav[i].addEventListener('click', function(e) {
             e.preventDefault();
-
-            if(this.childNodes[3]) {
-              let current = this.childNodes[3];
-              this.childNodes[3].classList.add('config__nav__sub--active');
-              setTimeout(() => {
-                this.childNodes[3].style.transform="translateX(0)";
-                that.returns(current);
-              }, 100);
-            }
+            let current = this;
+            this.classList.add('sideNav--active');
+            that.returns(current);
+            // if(this.childNodes[3]) {
+            //   let current = this.childNodes[3];
+            //   this.childNodes[3].classList.add('config__nav__sub--active');
+            //   setTimeout(() => {
+            //     this.childNodes[3].style.transform="translateX(0)";
+            //     that.returns(current);
+            //   }, 100);
+            // }
           })
         }
       }
@@ -67,6 +69,7 @@ class NavColor
         activeArrow.classList.add('config__nav__histo__arrow--active');
 
         this.back.addEventListener('click', function(e){
+          console.log('yoyoyoy')
           e.preventDefault();
           activeItem.style.transform="translateX(100vw)";
           setTimeout(() => {

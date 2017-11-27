@@ -3,6 +3,10 @@
   text-align: center;
   margin-bottom: 65px;
 
+  @include medium {
+    width: 45%;
+  }
+
   .config__term__item__icone {
     width: 30%;
     opacity: 0.5;

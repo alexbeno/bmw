@@ -14,3 +14,18 @@ $fullWidth: 234px;
   width: calc(120% + 234px);
   margin-left: calc(-10% - 117px);
 }
+
+$small: 768px;
+$medium: 1024px;
+
+@mixin medium {
+  @media (max-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: #{$large}) {
+    @content;
+  }
+}

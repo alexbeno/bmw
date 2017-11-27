@@ -7,6 +7,11 @@
   z-index: 150;
   transition: all $transition-bezier1 0.5s;
   position: relative;
+  @include medium {
+    height: 75vh;
+    padding-bottom: 13px;
+    transform: translateY(- 75vh);
+  }
 }
 
 .config__pop--active {
@@ -18,10 +23,16 @@
   width: 90%;
   @include flex($justify: space-between , $align: flex-start);
   padding-bottom: em(40);
+  @include medium {
+    flex-direction: column;
+  }
 }
 
 .devis_item-container {
   width: 20%;
+  @include medium {
+    width: 100%;
+  }
 }
 
 .devis_item-container_section {
@@ -29,12 +40,20 @@
   font-weight: $semi-bold;
   color: $black;
   margin-bottom: em(35);
+  @include medium {
+    margin-bottom: 15px;
+    font-size: em(14);
+  }
 }
 
 .devis_item-container_name {
   font-size: em(24);
   font-weight: $semi-bold;
   color: $white;
+  @include medium {
+    margin-bottom: 5px;
+    font-size: em(18);
+  }
 }
 
 .devis_item-container--base {
@@ -47,12 +66,21 @@
   font-weight: $semi-bold;
   color: $black;
   margin-bottom: em(35);
+
+  @include medium {
+    margin-bottom: 15px;
+    font-size: em(14);
+  }
 }
 
 .devis_item-container--base_name {
   font-size: em(24);
   font-weight: $semi-bold;
-  color: $white;
+  color: red;
+  @include medium {
+    margin-bottom: 5px;
+    font-size: em(18);
+  }
 }
 
 
@@ -71,6 +99,9 @@
   color: $black;
   background: transparent;
   border: 1px solid $black;
+  @include medium {
+    display: none;
+  }
 }
 
 .config__pop__choix__buy {
@@ -79,8 +110,7 @@
 
 .config__pop__choix__buy__button {
   @include abutton($left: em(20), $up: em(13));
-  border-radius: em(25);
-  text-transform: uppercase;  
+  border-radius: em(25);  
   text-decoration: none;
   font-weight: $semi-bold;
   font-size: em(16);  
@@ -101,6 +131,10 @@
 .config {
   transform: translateY(- em(350));
   transition: all $transition-bezier1 0.5s;
+
+  @include medium {
+    transform: translateY(- 75vh);
+  }
 }
 
 .config--pop {

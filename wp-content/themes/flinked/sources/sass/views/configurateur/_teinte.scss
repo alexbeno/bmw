@@ -5,6 +5,10 @@
   flex-wrap: wrap;
   padding-top: em(25);
   height: auto;
+  @include medium {
+    justify-content: flex-start;
+    padding-left: 2.5%;
+  }
 }
 
 .config__term__item {
@@ -12,6 +16,11 @@
   margin-bottom: em(30);
   cursor: pointer;
   position: relative;
+  
+  @include medium {
+    width: 30%;
+    margin-right: 2.5%;
+  }
 }
 
 .config__term__item--active {
