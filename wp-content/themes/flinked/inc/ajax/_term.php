@@ -42,6 +42,7 @@
             $the_query->the_post();
             set_query_var( 'mainSlug', $mainSlug );
             set_query_var( 'slug', $slug );
+            set_query_var( 'index', $index );
             if($slug === "teintes_exterieures") {
               get_template_part('template/configurateur/components/configurateur-components-teinte');
             }

@@ -205,7 +205,7 @@ class AddOption
     init() 
     {
       if(this.content != null) {
-        this.getInfo();
+        this.getInfo()
         this.clearPrice()
       }
     }

@@ -16,14 +16,12 @@
 
 .config__pop__mainItem {
   width: 90%;
-  @include flex($justify: flex-start , $align: flex-start);
+  @include flex($justify: space-between , $align: flex-start);
   padding-bottom: em(40);
-  border-bottom: 1px solid $white;
 }
 
 .devis_item-container {
-  margin-right: 3%;
-  width: 15%;
+  width: 20%;
 }
 
 .devis_item-container_section {
@@ -108,4 +106,49 @@
 .config--pop {
   transform: translateY(- em(100));
   transition: all $transition-bezier1 0.5s;
+}
+
+
+.config__pop__mainOption {
+  width: 90%;
+  height: 1px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #FFF;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop__mainOption--option {
+  width: 90%;
+  padding: 50px 0;
+  height: auto;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop--option {
+  height: auto;
+  padding: 20px 0;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop__mainOption__container {
+  opacity: 0;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop__mainOption__container--option {
+  opacity: 1;
+  transition: all $transition-bezier1 0.5s;
+  @include flex($justify: flex-start);
+  flex-wrap: wrap;
+}
+
+.devis_item-containerOption {
+  margin-right: 5%;
+  width: 30%;
+}
+
+.devis_item-containerOption_name {
+  font-size: em(18);
+  margin-bottom: 30px;
+  font-weight: $semi-bold;
 }
