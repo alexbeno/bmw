@@ -5,33 +5,33 @@ const CurrentConfig = {
   interieur: null,
   pack: null,
   option: [],
-  price: 0,
+  price: 138950,
   listOfOption: {
     moteur_moteur: {
       section: 'moteur',
       price: 0,
-      name: null,
-      slug: null,
+      name: "bmw i8 362 ch",
+      slug:"bmw_i8_362_ch",
     },
 
     exterieur_teintes_exterieures: {
       section: 'teinte extérieure',
       price: 0,
-      name: null,
-      slug: null,
+      name: "sophisto grey blue",
+      slug: "sophisto_grey_blue",
     },
     exterieur_jantes: {
       section: 'jante',
       price: 0,
-      name: null,
-      slug: null,
+      name: 'Jantes en alliage leger profilées 20" style 444 TurbineS02G4',
+      slug: "jante_de_serie",
     },
 
     interieur_interieur: {
       section: 'interieur',
       price: 0,
-      name: null,
-      slug: null,
+      name: "Interieur de serie",
+      slug: "Interieur_de_serie",
     },
 
     pack_pack: {
@@ -41,7 +41,18 @@ const CurrentConfig = {
       slug: null,
     },
     option: {
-      item: [],
+      item: [
+        {
+          price: 0,
+          name: "tapis de sol en velours",
+          slug: "tapis_de_sol_en_velours",
+        },
+        {
+          price: 0,
+          name: "ecrous antivol de roues",
+          slug: "ecrous_antivol_de_roues",
+        }
+      ],
       section: "option",
       price: 0,
     }

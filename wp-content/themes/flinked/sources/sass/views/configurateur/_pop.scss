@@ -1,28 +1,154 @@
 .config__pop {
-  display: none;
-  width: 60%;
-  height: 80vh;
-  background: white;
-  position: fixed;
-  top: 10vh;
-  left: 15%;
+  @include flex($direction: column, $justify: space-around, $align: center);
+  transform: translateY(- em(350));
+  width: 100%;
+  height: em(350);
+  background: #e1e1e1;
   z-index: 150;
+  transition: all $transition-bezier1 0.5s;
+  position: relative;
 }
 
 .config__pop--active {
-  display: block;
+  transform: translateY(0);
+  transition: all $transition-bezier1 0.5s;
 }
 
-.config__opacity--active{
-  &::after {
-    z-index: 100;
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: $black;
-    opacity: 0.7;
+.config__pop__mainItem {
+  width: 90%;
+  @include flex($justify: space-between , $align: flex-start);
+  padding-bottom: em(40);
+}
+
+.devis_item-container {
+  width: 20%;
+}
+
+.devis_item-container_section {
+  font-size: em(16);
+  font-weight: $semi-bold;
+  color: $black;
+  margin-bottom: em(35);
+}
+
+.devis_item-container_name {
+  font-size: em(24);
+  font-weight: $semi-bold;
+  color: $white;
+}
+
+.devis_item-container--base {
+  margin-right: 3%;
+  width: 15%;
+}
+
+.devis_item-container--base_section {
+  font-size: em(16);
+  font-weight: $semi-bold;
+  color: $black;
+  margin-bottom: em(35);
+}
+
+.devis_item-container--base_name {
+  font-size: em(24);
+  font-weight: $semi-bold;
+  color: $white;
+}
+
+
+.config__pop__choix {
+  width: 90%;
+  @include flex($justify: space-between, $align: flex-start);
+}
+
+.config__pop__choix__option {
+  @include abutton($left: em(20), $up: em(13));
+  border-radius: em(25);
+  text-transform: uppercase;  
+  text-decoration: none;
+  font-weight: $semi-bold;
+  font-size: em(16);  
+  color: $black;
+  background: transparent;
+  border: 1px solid $black;
+}
+
+.config__pop__choix__buy {
+  @include flex();
+}
+
+.config__pop__choix__buy__button {
+  @include abutton($left: em(20), $up: em(13));
+  border-radius: em(25);
+  text-transform: uppercase;  
+  text-decoration: none;
+  font-weight: $semi-bold;
+  font-size: em(16);  
+  background: $blue;
+  color: $white;
+  margin-left: em(36);
+}
+
+.config__pop__choix__buy__price {
+  font-size: em(16);
+  font-weight: $regular;
+
+  span {
+    font-weight: $bold;
   }
+}
+
+.config {
+  transform: translateY(- em(350));
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config--pop {
+  transform: translateY(- em(100));
+  transition: all $transition-bezier1 0.5s;
+}
+
+
+.config__pop__mainOption {
+  width: 90%;
+  height: 1px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #FFF;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop__mainOption--option {
+  width: 90%;
+  padding: 50px 0;
+  height: auto;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop--option {
+  height: auto;
+  padding: 20px 0;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop__mainOption__container {
+  opacity: 0;
+  transition: all $transition-bezier1 0.5s;
+}
+
+.config__pop__mainOption__container--option {
+  opacity: 1;
+  transition: all $transition-bezier1 0.5s;
+  @include flex($justify: flex-start);
+  flex-wrap: wrap;
+}
+
+.devis_item-containerOption {
+  margin-right: 5%;
+  width: 30%;
+}
+
+.devis_item-containerOption_name {
+  font-size: em(18);
+  margin-bottom: 30px;
+  font-weight: $semi-bold;
 }
