@@ -48,23 +48,34 @@
 }
 
 .config__price__text {
-  font-size: em(12);
+  font-size: em(18);
+  @include medium {
+    font-size: em(12);
+  }
 }
 
 .config__price__item {
-  font-size: em(12);
+  font-size: em(18);
   font-weight: $bold;
   margin-left: 10px;
+  @include medium {
+    font-size: em(12);
+  }
 }
 
 .config__price__devis {
-  @include abutton($left: em(10), $up: em(12));
+  @include abutton($left: em(20), $up: em(15));
   background: $blue;
   border-radius: em(25);
+  text-transform: uppercase;  
   text-decoration: none;
-  margin-left: em(10);
-  font-size: em(12);  
-  font-weight: $semi-bold;
+  margin-left: em(40);
+  font-size: em(16);  
+  @include medium {
+    @include abutton($left: em(10), $up: em(12));
+    font-size: em(12);
+    margin-left: em(10);
+  }
 }
 
 .config__3D {

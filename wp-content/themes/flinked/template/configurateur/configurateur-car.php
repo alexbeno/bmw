@@ -16,3 +16,5 @@
     <img src="<?= IMAGES_URL ?>/startView.png" alt="3d view"class="config__3D__image">
   </div>
 </div>
+
+<div id="bodymovin"></div>

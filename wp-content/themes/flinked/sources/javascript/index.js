@@ -6,6 +6,7 @@ import NavConfig from './NavConfig.js'
 import View360  from './View360.js'
 import MobilView  from './MobilView.js'
 import Devis  from './Devis.js'
+import Loader  from './Loader.js'
 
 
 function init() {
@@ -64,6 +65,13 @@ function init() {
 
   let devis = new Devis();
   devis.init();
+
+  /**
+  * Loader
+  */
+
+  let loader = new Loader();
+  loader.init();
 
   
 }
