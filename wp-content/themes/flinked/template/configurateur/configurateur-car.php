@@ -2,7 +2,11 @@
   $prefixe = "configurateur_config--";
   $config_price = get_field($prefixe.'prix');
 ?>
+
 <div id ="config__car" class="config__car">
+  <div class="loader">
+      <div class="loader__content"></div>
+  </div>
   <img id="config__car__image" src="" alt="BMW" class="dragdealer config__car__image">
 
   <div class="config__price">
@@ -16,5 +20,3 @@
     <img src="<?= IMAGES_URL ?>/startView.png" alt="3d view"class="config__3D__image">
   </div>
 </div>
-
-<div id="bodymovin"></div>

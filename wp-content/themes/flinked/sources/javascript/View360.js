@@ -39,6 +39,7 @@ class View360
       this.container = document.querySelector('.config__car__image');
       this.button = document.querySelector('.config__3D__image');
       this.checkOption = document.querySelectorAll('.config__nav__item__sub__link');
+      this.loaderContent = document.querySelector('.loader');
       this.image = new Image();
       this.index = 0;
       this.indexDrag = 0;
@@ -129,6 +130,24 @@ class View360
       this.container.setAttribute('src', current)
     }
 
+    loader() {
+      let that = this;
+      this.loaderContent.style.opacity = 0;
+      setTimeout(function(){
+        that.loaderContent.classList.add('loader--unactive');
+        that.container.style.opacity = 1;
+      }, 200);
+    }
+
+    initloader() {
+      let that = this;
+      this.container.style.opacity = 0;
+      setTimeout(function(){
+        that.loaderContent.classList.remove('loader--unactive');
+        that.loaderContent.style.opacity = 1;
+      }, 200);
+    }
+
     loadingCallBack(data, index) {
       /**
        * verfication when image is finish to load for display it
@@ -152,6 +171,7 @@ class View360
           data.load = true;
         }
         else {
+          that.loader();
           that.initDisplay(index);
           that.startView();
         }
@@ -303,11 +323,14 @@ class View360
       
       if(this.colorData[this.colorData.sortKey[10]].load === false)
       {
+        this.initloader();
         this.loadingImage(this.index, true, this.indexDrag);
       }
       else {
         this.initDisplay(this.indexDrag - 1);
+        this.loader();
       }
+
     }
     optionClick() {
       /**

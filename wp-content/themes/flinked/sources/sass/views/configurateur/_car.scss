@@ -13,6 +13,8 @@
   width: 100%;
   height: auto;
   margin-left: -5%;
+  opacity: 0;
+  transition: all ease 0.2s;
   @include medium {
     display: none;
   }

@@ -72,7 +72,6 @@ function init() {
 
   let loader = new Loader();
   loader.init();
-
   
 }
 
