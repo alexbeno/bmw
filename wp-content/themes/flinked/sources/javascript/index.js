@@ -7,10 +7,13 @@ import View360  from './View360.js'
 import MobilView  from './MobilView.js'
 import Devis  from './Devis.js'
 import Loader  from './Loader.js'
+import { initScrollAnim } from './scroll_anim'
 
 
 function init() {
-  
+
+  initScrollAnim();
+
   /**
   * change color when container is not an img
   */
@@ -72,7 +75,7 @@ function init() {
 
   let loader = new Loader();
   loader.init();
-  
+
 }
 
 window.onload = init;
