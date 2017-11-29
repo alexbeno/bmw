@@ -1,4 +1,4 @@
-<?php 
+<?php
 $prefixe = 'design_exterieur--';
 $prefixeRepeat = 'design_exterieur--contenu--';
 $design_title = get_field($prefixe.'title');
@@ -16,17 +16,17 @@ $design_content_content = $prefixeRepeat.'explain';
     <h3 class="design__exterieur__title__main title__main"><?= $design_title ?></h3>
   </div>
   <div class="design__exterieur__container">
-    <?php 
+    <?php
     if( have_rows($design_content) ):
       while ( have_rows($design_content) ) : the_row();
           ?>
             <div class="design__exterieur__content content">
-              <h4 class="design__exterieur__content__title content__title"><?= get_sub_field($design_content_title); ?></h4>
-              <div class="design__exterieur__content__text content__text"><?= get_sub_field($design_content_content);  ?></div>
-            </div>  
+              <h4 class="design__exterieur__content__title content__title to-animate"><?= get_sub_field($design_content_title); ?></h4>
+              <div class="design__exterieur__content__text content__text to-animate"><?= get_sub_field($design_content_content);  ?></div>
+            </div>
           <?php
-      endwhile;  
-    else : 
+      endwhile;
+    else :
     endif;
     ?>
   </div>

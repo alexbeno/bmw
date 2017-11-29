@@ -8,7 +8,7 @@ function onIntersect(entries) {
 }
 
 const options = {
-  rootMargin: '-200px', // To fire the event little bit after screen enters
+  rootMargin: '-400px', // To fire the event little bit after screen enters
 }
 
 const observer = new window.IntersectionObserver(onIntersect, options)

@@ -1,4 +1,4 @@
-<?php 
+<?php
 $prefixe = 'design_lumiere--';
 $design_upTitle = get_field($prefixe.'upTitle');
 $design_title = get_field($prefixe.'title');
@@ -14,20 +14,20 @@ $design_slider = get_field($prefixe.'slider');
       <h3 class="design__lumiere__title__main title__main"><?= $design_title ?></h3>
     </div>
     <div class="design__lumiere__content content">
-      <div class="design__lumiere__content__text content__text"><?= $design_contenu;  ?></div>
-    </div>  
+      <div class="design__lumiere__content__text content__text to-animate"><?= $design_contenu;  ?></div>
+    </div>
   </div>
-  <div class="design__lumiere__slider slider">
+  <div class="design__lumiere__slider slider to-animate">
     <div class="slider__container">
       <div class="design__lumiere__slider__container__mover slider__container__mover">
         <?php
-          if( $design_slider ): 
-            foreach( $design_slider as $slider ): 
+          if( $design_slider ):
+            foreach( $design_slider as $slider ):
               ?>
                 <img src="<?= $slider['url']; ?>" alt="BMW" class="design__lumiere__slider__container__item slider__container__item">
               <?php
-            endforeach; 
-          endif;      
+            endforeach;
+          endif;
         ?>
       </div>
     </div>
