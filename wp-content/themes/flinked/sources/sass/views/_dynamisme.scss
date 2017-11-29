@@ -2,6 +2,27 @@
 
 }
 
+.dyna__header__content {
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all $transition-bezier2 0.5s;
+  @include query(1200px) {
+    padding-left: $centerTab;
+  }
+
+  @include medium {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s;
+  }
+}
+
 
 //aerodynamisme
 
@@ -36,10 +57,48 @@
   }
 }
 
+.dyna__aero__content__text {
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all $transition-bezier2 0.5s 0.2s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s 0.2s;
+  }
+}
+
 .dyna__aero__slider {
   width: 50%;
+  will-change: auto;
+  opacity: 0;
+  transform: translateX(10%);
+  transition: all $transition-bezier2 0.5s 0.2s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   @include query(900px) {
     display: none;
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all $transition-bezier2 0.5s 0.2s;
   }
 }
 
@@ -65,7 +124,7 @@
 }
 
 
-// mode de conduite 
+// mode de conduite
 
 .dyna__mode {
   padding: 100px $center;
@@ -93,9 +152,47 @@
   }
 }
 
+.dyna__mode__content__text {
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all $transition-bezier2 0.5s 0.2s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s 0.2s;
+  }
+}
+
 .dyna__mode__image {
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: all $transition-bezier2 0.5s 0.3s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @include query(900px) {
     width: 100%;
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s 0.3s;
   }
 }
 
@@ -115,14 +212,14 @@
   height: auto;
 }
 
-//architecture 
+//architecture
 
 
 .dyna__archi {
   padding: 100px $center;
   position: relative;
   overflow: hidden;
-
+  margin-bottom: 150px;
   @include query(1200px) {
     padding: 100px $centerTab;
   }
@@ -136,12 +233,33 @@
 .dyna__archi__image {
   width: 100%;
   height: auto;
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: all $transition-bezier2 0.5s 0.2s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include query(850px) {
+    width: 90vw;
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s 0.2s;
+  }
 }
 
 
 .dyna__archi__container {
   margin-top: 60px;
-  @include flex($justify: space-between);
+  @include flex($justify: space-between, $align: flex-start);
 
   @include query(900px) {
     flex-direction: column;
@@ -151,6 +269,46 @@
 .dyna__archi__container__content {
   @include query(900px) {
     width: 100%;
+  }
+}
+
+.dyna__archi__container__content__title {
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all $transition-bezier2 0.5s 0.1s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s 0.1s;
+  }
+}
+
+.dyna__archi__container__content__text {
+  will-change: auto;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: all $transition-bezier2 0.5s 0.2s;
+
+  @include medium {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.scrolled {
+    will-change: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-bezier2 0.5s 0.2s;
   }
 }
 

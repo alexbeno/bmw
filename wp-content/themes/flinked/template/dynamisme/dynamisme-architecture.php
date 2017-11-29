@@ -1,4 +1,4 @@
-<?php 
+<?php
 $prefixe = 'dynamisme_architecture--';
 $prefixItem = 'dynamisme_architecture--contenu--';
 
@@ -31,13 +31,13 @@ $dyna_item_contenu = $prefixItem .'texte';
 //       echo '</br>';
 //       echo '</br>';
 
-//       echo get_sub_field($dyna_item_title);  
-      
+//       echo get_sub_field($dyna_item_title);
+
 //       echo '</br>';
 
-//       echo get_sub_field($dyna_item_contenu); 
-//   endwhile;  
-// else : 
+//       echo get_sub_field($dyna_item_contenu);
+//   endwhile;
+// else :
 // endif;
 
 // echo '</br>';
@@ -49,7 +49,7 @@ $dyna_item_contenu = $prefixItem .'texte';
     <h4 class="dyna__archi__title__up title__up"><?= $dyna_upTitle ?></h4>
     <h3 class="dyna__archi__title__main title__main"><?= $dyna_title ?></h3>
   </div>
-  <img src="<?= $dyna_image ?>" alt="BMW" class="dyna__archi__image">
+  <img src="<?= $dyna_image ?>" alt="BMW" class="dyna__archi__image to-animate">
   <div class="dyna__archi__container">
   <?php
     if( have_rows($dyna_item) ):
@@ -57,12 +57,12 @@ $dyna_item_contenu = $prefixItem .'texte';
 
       ?>
         <div class="dyna__archi__container__content content">
-          <h4 class="dyna__archi__container__content__title content__title"><?= get_sub_field($dyna_item_title); ?></h4>
-          <div class="dyna__archi__container__content__text content__text"><?= get_sub_field($dyna_item_contenu);  ?></div>
-        </div>  
+          <h4 class="dyna__archi__container__content__title content__title to-animate"><?= get_sub_field($dyna_item_title); ?></h4>
+          <div class="dyna__archi__container__content__text content__text to-animate"><?= get_sub_field($dyna_item_contenu);  ?></div>
+        </div>
       <?php
-      endwhile;  
-    else : 
+      endwhile;
+    else :
     endif;
   ?>
   <p class="dyna__archi__number numberSection">03</p>
