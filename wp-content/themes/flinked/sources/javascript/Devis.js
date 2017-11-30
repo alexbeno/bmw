@@ -25,7 +25,7 @@ class Devis
       let item = document.querySelectorAll('.devis_item-container');
       for (let index = 0; index <item.length; index++) {
         item[index].remove();
-        
+
       }
     }
 
@@ -69,7 +69,7 @@ class Devis
     }
 
     fillPrice() {
-      let priceToInsert = Intl.NumberFormat().format(CurrentConfig.price) + ',00'; 
+      let priceToInsert = Intl.NumberFormat().format(CurrentConfig.price) + ',00';
       this.priceItem.innerText = priceToInsert;
     }
 
@@ -80,7 +80,7 @@ class Devis
         const element = config["option"].item[index];
         let name = element['name'];
         let price = element['price'];
-        let slug = element['slug']; 
+        let slug = element['slug'];
 
         if(slug != null) {
           that.fillOption(name, price, slug)
@@ -104,7 +104,7 @@ class Devis
           let name = config[key]['name'];
           let price = config[key]['price'];
           let slug = config[key]['slug'];
-  
+
           if(slug != null) {
             that.fillConfig(section, name, price, slug)
           }
@@ -116,7 +116,6 @@ class Devis
       let that = this;
       this.main.classList.add('config__pop--active')
       this.global.classList.add('config--pop')
-      this.body.classList.add('body--devis')
       setTimeout(function(){
         that.closes();
         that.getConfig();
@@ -126,7 +125,6 @@ class Devis
     unshow() {
       this.main.classList.remove('config__pop--active')
       this.global.classList.remove('config--pop')
-      this.body.classList.remove('body--devis')
       this.clean();
     }
     open() {
@@ -152,7 +150,7 @@ class Devis
     cleanOption() {
       let item = document.querySelectorAll('.devis_item-containerOption');
       for (let index = 0; index <item.length; index++) {
-        item[index].remove();        
+        item[index].remove();
       }
     }
     closeOption() {
@@ -166,7 +164,7 @@ class Devis
       this.openOption = true;
       this.optionButton.innerText = 'Voir les options'
     }
-    
+
     justCloseOption () {
       let that = this;
       that.optionContainer.classList.remove('config__pop__mainOption--option')
@@ -189,10 +187,11 @@ class Devis
         }
       })
     }
-    init() 
+    init()
     {
       if(this.main != null) {
         this.open()
+        this.body.classList.add('body--devis')
       }
     }
 }

@@ -92,10 +92,9 @@
 .config__pop__choix__option {
   @include abutton($left: em(20), $up: em(13));
   border-radius: em(25);
-  text-transform: uppercase;  
   text-decoration: none;
   font-weight: $semi-bold;
-  font-size: em(16);  
+  font-size: em(16);
   color: $black;
   background: transparent;
   border: 1px solid $black;
@@ -110,10 +109,10 @@
 
 .config__pop__choix__buy__button {
   @include abutton($left: em(20), $up: em(13));
-  border-radius: em(25);  
+  border-radius: em(25);
   text-decoration: none;
   font-weight: $semi-bold;
-  font-size: em(16);  
+  font-size: em(16);
   background: $blue;
   color: $white;
   margin-left: em(36);

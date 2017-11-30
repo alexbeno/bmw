@@ -69,10 +69,10 @@
   @include abutton($left: em(20), $up: em(15));
   background: $blue;
   border-radius: em(25);
-  text-transform: uppercase;
   text-decoration: none;
   margin-left: em(40);
   font-size: em(16);
+  font-weight: $semi-bold;
   @include medium {
     @include abutton($left: em(10), $up: em(12));
     font-size: em(12);

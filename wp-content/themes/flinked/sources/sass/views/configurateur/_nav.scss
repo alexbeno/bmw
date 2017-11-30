@@ -7,7 +7,8 @@
   height: auto;
   position: absolute;
   right: 0;
-  top: em(30);
+  top: em(0);
+  padding-top: 65px;
 
   @include medium {
     position: relative;
@@ -17,8 +18,14 @@
 }
 
 .config__nav__histo {
+  right: 0;
+  top: 0em;
+  width: 330px;
+  position: absolute;
   background: $white;
   padding: 20px 0;
+  height: auto;
+  z-index: 10;
 }
 
 .config__nav__histo__arrow {
@@ -111,7 +118,7 @@
 }
 .config__term--active {
   display: block;
-  padding-top: em(100);
+  padding-top: em(30);
   position: fixed;
   top: 25px;
   right: 0;
@@ -119,8 +126,9 @@
   height: 100vh;
   z-index: 3;
   background: white;
-  overflow: scroll;
   transition: all $transition-bezier1 0.3s;
+  overflow: scroll;
+  padding-bottom: 10%;
   @include medium {
     min-height: 150vh;
     height: auto;
