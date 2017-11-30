@@ -235,10 +235,9 @@
 }
 
 .securite__aide__slider__button {
-  left: -70px;
 
   @include query(1350px) {
-    left: 8px;
+    left: 10px;
   }
 }
 
