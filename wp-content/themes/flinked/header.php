@@ -9,18 +9,18 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-    <nav class="header"> 
-        <img class="header__logo" src="<?=IMAGES_URL?>/bmw.png"/>
+    <nav class="header">
+        <a href="<?php echo get_option('home'); ?>/" ><img class="header__logo" src="<?=IMAGES_URL?>/bmw.png"/></a>
         <div class="header__menu">
             <?php wp_nav_menu(array( 'theme_location' => 'header' )); ?>
         </div>
-    </nav>  
+    </nav>
 
-    <nav class="header--responsive"> 
-        <img class="header--responsive__logo" src="<?=IMAGES_URL?>/bmw.png"/>
+    <nav class="header--responsive">
+        <a href="<?php echo get_option('home'); ?>/" ><img class="header--responsive__logo" src="<?=IMAGES_URL?>/bmw.png"/></a>
         <img class="header--responsive__button" src="<?=IMAGES_URL?>/menu.svg"/>
         <div class="header--responsive__menu">
             <img class="header--responsive__close" src="<?=IMAGES_URL?>/close.svg"/>
             <?php wp_nav_menu(array( 'theme_location' => 'header' )); ?>
         </div>
-    </nav>  
+    </nav>
