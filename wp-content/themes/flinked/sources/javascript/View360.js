@@ -173,7 +173,6 @@ class View360
         else {
           that.loader();
           that.initDisplay(index);
-          // that.startView();
           that.event();
         }
       }
@@ -206,28 +205,6 @@ class View360
       */
 
       this.container.setAttribute('src', image)
-    }
-
-    auto() {
-      /**
-      * auto 360 view
-      * @function update();
-      * @function event();
-      */
-
-      let that = this;
-      let index = 16;
-      let inter = setInterval(function(){
-        if(index < that.size) {
-          index++
-        }
-        else {
-          that.event();
-          clearInterval(inter);
-        }
-        let current = that.colorDataText + index
-        that.update(that.colorData[current].url)
-      }, 100);
     }
 
     dragCallback(x) {
@@ -296,19 +273,6 @@ class View360
       });
     }
 
-    startView() {
-      /**
-       * launch the 360 auto view
-       * @function auto()
-       */
-      let that = this;
-      this.button.addEventListener('click', function(e){
-        if(that.theviewstart === false)   {
-          that.auto();
-          that.theviewstart = true;
-        }
-      });
-    }
     changeColor(slug) {
       /**
        * change the current color config

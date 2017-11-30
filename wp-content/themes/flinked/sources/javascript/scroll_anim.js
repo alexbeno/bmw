@@ -8,12 +8,11 @@ function onIntersect(entries) {
 }
 
 const options = {
-  rootMargin: '-400px', // To fire the event little bit after screen enters
+  rootMargin: '-200px', // To fire the event little bit after screen enters
 }
 
 const observer = new window.IntersectionObserver(onIntersect, options)
 
-// console.log(observer)
 
 export function initScrollAnim() {
   ;[...document.querySelectorAll('.to-animate')].forEach(element => observer.observe(element))
