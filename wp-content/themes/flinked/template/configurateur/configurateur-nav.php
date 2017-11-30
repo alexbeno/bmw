@@ -38,7 +38,7 @@ $term_option = get_terms( 'option', array(
         $slug = $term->slug;
     ?>
     <div class="config__nav__item">
-      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_moteurs.png" alt="moteur" class="config__nav__item__bg">
+      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_moteurs.jpg" alt="moteur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="moteur" data-slug="<?= $slug ?>" ><?= $current ?></a>
     </div>
     <?php } ?>
@@ -57,11 +57,11 @@ $term_option = get_terms( 'option', array(
           <?php
             if($slug === "teintes_exterieures") {
             ?>
-              <img src="<?= IMAGES_URL ?>/configurateur/nav/exterieur_teintes.png" alt="teintes exterieures" class="config__nav__item__bg ">
+              <img src="<?= IMAGES_URL ?>/configurateur/nav/exterieur_teintes.jpg" alt="teintes exterieures" class="config__nav__item__bg ">
             <?php
             }else if($slug === "jantes"){
             ?>
-              <img src="<?= IMAGES_URL ?>/configurateur/nav/exterieur_jantes.png" alt="Jantes" class="config__nav__item__bg ">
+              <img src="<?= IMAGES_URL ?>/configurateur/nav/exterieur_jantes.jpg" alt="Jantes" class="config__nav__item__bg ">
             <?php
             }
           ?>
@@ -79,7 +79,7 @@ $term_option = get_terms( 'option', array(
         $slug = $term->slug;
     ?>
     <div class="config__nav__item config__nav__item--interieur">
-      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_interieur.png" alt="interieur" class="config__nav__item__bg">
+      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_interieur.jpg" alt="interieur" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="interieur" data-slug="<?= $slug ?>" ><?= $current ?></a>
     </div>
     <?php } ?>
@@ -94,7 +94,7 @@ $term_option = get_terms( 'option', array(
         $slug = $term->slug;
     ?>
     <div class="config__nav__item">
-      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_equipement.png" alt="équipement" class="config__nav__item__bg">
+      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_equipement.jpg" alt="équipement" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="pack" data-slug="<?= $slug ?>" >Pack D'équipements</a>
     </div>
     <?php }?>
@@ -104,7 +104,7 @@ $term_option = get_terms( 'option', array(
 
   <div class="config__nav__container">
     <div class="config__nav__item">
-      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_options.png" alt="option" class="config__nav__item__bg">
+      <img src="<?= IMAGES_URL ?>/configurateur/nav/base_options.jpg" alt="option" class="config__nav__item__bg">
       <a href="#" class="config__nav__item__sub__link config__nav__item__link" data-mainSlug="option" >option</a>
     </div>
   </div>
@@ -112,19 +112,5 @@ $term_option = get_terms( 'option', array(
   <div class="config__term">
     <div class="config__term__container">
     </div>
-  </div>
-</div>
-
-<div class="config__mobilNav">
-  <div class="config__mobilNav__slide">
-    <?php
-      foreach( $term_moteur as $term ) {
-        $current = $term->name;
-        $slug = $term->slug;
-      ?>
-      <div class="config__mobilNav__item">
-        <a href="#" class="config__mobilNav__item__link" data-mainSlug="moteur" data-slug="<?= $slug ?>" ><?= $current ?></a>
-      </div>
-      <?php } ?>
   </div>
 </div>
