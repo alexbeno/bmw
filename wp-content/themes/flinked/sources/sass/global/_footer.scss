@@ -1,0 +1,62 @@
+.footer {
+    background-color: rgb(16, 16, 18);
+    width: 100%;
+    padding: 70px 117px 100px 117px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @include query(1200px) {
+        padding: 70px 30px 100px 30px;
+    }
+    @include query(800px) {
+        flex-direction: column;
+    }
+    &__item {
+        @include query(800px) {
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+        &__logo {
+            width: 60px;
+            height: 60px;
+        }
+        &__title {
+            font-size: 16px;
+            color: rgb(0, 66, 235);
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 35px;
+        }
+        &__link {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            display: block;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        &__social {
+            border-radius: 50%;
+            background-color: rgb(0, 66, 235);
+            width: 40px;
+            height: 40px;
+            display: block;
+            float: left;
+            text-align: center;
+            color: #fff;
+            line-height: 40px;
+            text-decoration: none;
+            &:nth-child(2){
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+    }
+  &__copyright {
+    font-size: 14px;
+    color: rgb(97, 97, 97);
+    position: absolute;
+    bottom: 40px;
+    left: 117px;
+  }
+}
