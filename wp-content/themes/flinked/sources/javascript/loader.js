@@ -18,14 +18,13 @@ class Loader
             autoplay: true,
             animationData: animationData
         };
-    
+
         var anim;
-    
+
         anim = bodymovin.loadAnimation(params);
     }
-    init() 
+    init()
     {
-        console.log("cocou")
         if(this.container != null) {
             this.render();
         }

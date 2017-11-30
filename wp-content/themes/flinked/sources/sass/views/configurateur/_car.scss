@@ -14,7 +14,7 @@
   height: auto;
   margin-left: -5%;
   opacity: 0;
-  transition: all ease 0.2s;
+  transition: all ease 0.1s;
   @include medium {
     display: none;
   }
@@ -24,7 +24,7 @@
   display: none;
   width: 140%;
   height: auto;
-  margin-left: -30%;  
+  margin-left: -30%;
   @include medium {
     display: block;
   }
@@ -69,10 +69,10 @@
   @include abutton($left: em(20), $up: em(15));
   background: $blue;
   border-radius: em(25);
-  text-transform: uppercase;  
+  text-transform: uppercase;
   text-decoration: none;
   margin-left: em(40);
-  font-size: em(16);  
+  font-size: em(16);
   @include medium {
     @include abutton($left: em(10), $up: em(12));
     font-size: em(12);

@@ -39,6 +39,7 @@ class View360
       this.container = document.querySelector('.config__car__image');
       this.checkOption = document.querySelectorAll('.config__nav__item__sub__link');
       this.loaderContent = document.querySelector('.loader');
+      this.price = document.querySelector('.config__price');
       this.image = new Image();
       this.index = 0;
       this.indexDrag = 13;
@@ -135,7 +136,7 @@ class View360
       setTimeout(function(){
         that.loaderContent.classList.add('loader--unactive');
         that.container.style.opacity = 1;
-      }, 200);
+      }, 100);
     }
 
     initloader() {
@@ -144,7 +145,7 @@ class View360
       setTimeout(function(){
         that.loaderContent.classList.remove('loader--unactive');
         that.loaderContent.style.opacity = 1;
-      }, 200);
+      }, 100);
     }
 
     loadingCallBack(data, index) {

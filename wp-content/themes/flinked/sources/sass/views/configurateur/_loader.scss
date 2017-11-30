@@ -1,18 +1,18 @@
 .loader {
-  position: relative;
-  width: 100%;
-  height: 70vh;
+  position: fixed;
+  width: 65%;
+  height: 80vh;
   background: white;
   @include flex();
   z-index: 10;
   opacity: 1;
-  transition: all ease 0.2s;
+  transition: all ease 0.1s;
 }
 
 .loader__content{
   background-color:#fff;
-  width:25%;
-  height:25%;
+  width:30%;
+  height:30%;
   display:block;
   overflow: hidden;
   transform: translate3d(0,0,0);
@@ -22,5 +22,5 @@
 
 .loader--unactive {
   display: none;
-  transition: all ease 0.2s;
+  transition: all ease 0.1s;
 }
