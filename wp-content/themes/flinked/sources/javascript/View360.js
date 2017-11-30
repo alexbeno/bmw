@@ -73,42 +73,52 @@ class View360
         },
         crystal_white_blue_jante_625_turbine: {
           obj: crystal_white_blue_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_625_turbine.png" ,
           slug: "crystal_white_blue_jante_625_turbine_",
         },
         ionic_silver_jante_625_turbine: {
           obj: ionic_silver_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_625_turbine.png" ,
           slug: "ionic_silver_jante_625_turbine_",
         },
         sophisto_grey_blue_jante_625_turbine: {
           obj: sophisto_grey_blue_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_625_turbine.png" ,
           slug: "sophisto_grey_blue_jante_625_turbine_",
         },
         sophisto_grey_jante_625_turbine: {
           obj: sophisto_grey_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_625_turbine.png" ,
           slug: "sophisto_grey_jante_625_turbine_",
         },
         crystal_white_grey_jante_625_turbine: {
           obj: crystal_white_grey_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_625_turbine.png" ,
           slug: "crystal_white_grey_jante_625_turbine_",
         },
         sophisto_grey_blue_jante_470_rayons: {
           obj: sophisto_grey_blue_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_470_rayons.png" ,
           slug: "sophisto_grey_blue_jante_470_rayons_",
         },
         sophisto_grey_jante_470_rayons: {
           obj: sophisto_grey_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_470_rayons.png" ,
           slug: "sophisto_grey_jante_470_rayons_",
         },
         crystal_white_grey_jante_470_rayons: {
           obj: crystal_white_grey_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_470_rayons.png" ,
           slug: "crystal_white_grey_jante_470_rayons_",
         },
         ionic_silver_jante_470_rayons: {
           obj: ionic_silver_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_470_rayons.png" ,
           slug: "ionic_silver_jante_470_rayons_",
         },
         crystal_white_blue_jante_470_rayons: {
           obj: crystal_white_blue_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_470_rayons.png" ,
           slug: "crystal_white_blue_jante_470_rayons_",
         },
       }
