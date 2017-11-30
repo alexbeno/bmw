@@ -1274,84 +1274,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/**
- * color + jante 1
- */
-
-
-/**
- * jante 2
- */
-
-
-/**
- * jante 3
- */
-
-
 var _CurrentConfig = require('./CurrentConfig.js');
 
 var _CurrentConfig2 = _interopRequireDefault(_CurrentConfig);
-
-var _sophisto_grey_blue = require('./data/color/sophisto_grey_blue.js');
-
-var _sophisto_grey_blue2 = _interopRequireDefault(_sophisto_grey_blue);
-
-var _sophisto_grey = require('./data/color/sophisto_grey.js');
-
-var _sophisto_grey2 = _interopRequireDefault(_sophisto_grey);
-
-var _ionic_silver = require('./data/color/ionic_silver.js');
-
-var _ionic_silver2 = _interopRequireDefault(_ionic_silver);
-
-var _crystal_white_grey = require('./data/color/crystal_white_grey.js');
-
-var _crystal_white_grey2 = _interopRequireDefault(_crystal_white_grey);
-
-var _crystal_white_blue = require('./data/color/crystal_white_blue.js');
-
-var _crystal_white_blue2 = _interopRequireDefault(_crystal_white_blue);
-
-var _crystal_white_blue_jante_625_turbine = require('./data/jante/crystal_white_blue_jante_625_turbine.js');
-
-var _crystal_white_blue_jante_625_turbine2 = _interopRequireDefault(_crystal_white_blue_jante_625_turbine);
-
-var _ionic_silver_jante_625_turbine = require('./data/jante/ionic_silver_jante_625_turbine.js');
-
-var _ionic_silver_jante_625_turbine2 = _interopRequireDefault(_ionic_silver_jante_625_turbine);
-
-var _sophisto_grey_blue_jante_625_turbine = require('./data/jante/sophisto_grey_blue_jante_625_turbine.js');
-
-var _sophisto_grey_blue_jante_625_turbine2 = _interopRequireDefault(_sophisto_grey_blue_jante_625_turbine);
-
-var _sophisto_grey_jante_625_turbine = require('./data/jante/sophisto_grey_jante_625_turbine.js');
-
-var _sophisto_grey_jante_625_turbine2 = _interopRequireDefault(_sophisto_grey_jante_625_turbine);
-
-var _crystal_white_grey_jante_625_turbine = require('./data/jante/crystal_white_grey_jante_625_turbine.js');
-
-var _crystal_white_grey_jante_625_turbine2 = _interopRequireDefault(_crystal_white_grey_jante_625_turbine);
-
-var _sophisto_grey_blue_jante_470_rayons = require('./data/jante/sophisto_grey_blue_jante_470_rayons.js');
-
-var _sophisto_grey_blue_jante_470_rayons2 = _interopRequireDefault(_sophisto_grey_blue_jante_470_rayons);
-
-var _sophisto_grey_jante_470_rayons = require('./data/jante/sophisto_grey_jante_470_rayons.js');
-
-var _sophisto_grey_jante_470_rayons2 = _interopRequireDefault(_sophisto_grey_jante_470_rayons);
-
-var _crystal_white_grey_jante_470_rayons = require('./data/jante/crystal_white_grey_jante_470_rayons.js');
-
-var _crystal_white_grey_jante_470_rayons2 = _interopRequireDefault(_crystal_white_grey_jante_470_rayons);
-
-var _ionic_silver_jante_470_rayons = require('./data/jante/ionic_silver_jante_470_rayons.js');
-
-var _ionic_silver_jante_470_rayons2 = _interopRequireDefault(_ionic_silver_jante_470_rayons);
-
-var _crystal_white_blue_jante_470_rayons = require('./data/jante/crystal_white_blue_jante_470_rayons.js');
-
-var _crystal_white_blue_jante_470_rayons2 = _interopRequireDefault(_crystal_white_blue_jante_470_rayons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1377,77 +1302,63 @@ var View360 = function () {
 
     this.colorAllOtion = {
       sophisto_grey: {
-        obj: _sophisto_grey2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey.png",
         slug: "sophisto_grey_"
       },
       sophisto_grey_blue: {
-        obj: _sophisto_grey_blue2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey_blue.png",
         slug: "sophisto_grey_blue_"
       },
       ionic_silver: {
-        obj: _ionic_silver2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/ionic_silver.png",
         slug: "ionic_silver_"
       },
       crystal_white_grey: {
-        obj: _crystal_white_grey2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_grey.png",
         slug: "crystal_white_grey_"
       },
       crystal_white_blue: {
-        obj: _crystal_white_blue2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_blue.png",
         slug: "crystal_white_blue_"
       },
       crystal_white_blue_jante_625_turbine: {
-        obj: _crystal_white_blue_jante_625_turbine2.default,
+
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_625_turbine.png",
         slug: "crystal_white_blue_jante_625_turbine_"
       },
       ionic_silver_jante_625_turbine: {
-        obj: _ionic_silver_jante_625_turbine2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_625_turbine.png",
         slug: "ionic_silver_jante_625_turbine_"
       },
       sophisto_grey_blue_jante_625_turbine: {
-        obj: _sophisto_grey_blue_jante_625_turbine2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_625_turbine.png",
         slug: "sophisto_grey_blue_jante_625_turbine_"
       },
       sophisto_grey_jante_625_turbine: {
-        obj: _sophisto_grey_jante_625_turbine2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_625_turbine.png",
         slug: "sophisto_grey_jante_625_turbine_"
       },
       crystal_white_grey_jante_625_turbine: {
-        obj: _crystal_white_grey_jante_625_turbine2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_625_turbine.png",
         slug: "crystal_white_grey_jante_625_turbine_"
       },
       sophisto_grey_blue_jante_470_rayons: {
-        obj: _sophisto_grey_blue_jante_470_rayons2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_470_rayons.png",
         slug: "sophisto_grey_blue_jante_470_rayons_"
       },
       sophisto_grey_jante_470_rayons: {
-        obj: _sophisto_grey_jante_470_rayons2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_470_rayons.png",
         slug: "sophisto_grey_jante_470_rayons_"
       },
       crystal_white_grey_jante_470_rayons: {
-        obj: _crystal_white_grey_jante_470_rayons2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_470_rayons.png",
         slug: "crystal_white_grey_jante_470_rayons_"
       },
       ionic_silver_jante_470_rayons: {
-        obj: _ionic_silver_jante_470_rayons2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_470_rayons.png",
         slug: "ionic_silver_jante_470_rayons_"
       },
       crystal_white_blue_jante_470_rayons: {
-        obj: _crystal_white_blue_jante_470_rayons2.default,
         image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_470_rayons.png",
         slug: "crystal_white_blue_jante_470_rayons_"
       }
@@ -1457,7 +1368,6 @@ var View360 = function () {
 
     this.colorData = this.currentKey.image;
     this.colorDataText = this.currentKey.slug;
-    this.size = this.currentKey.obj.sortKey.length;
   }
 
   _createClass(View360, [{
@@ -1544,14 +1454,14 @@ var View360 = function () {
        */
 
       if (x < 0) {
-        if (this.indexDrag >= this.size - 1) {
+        if (this.indexDrag >= 36) {
           this.indexDrag = 1;
         } else {
           this.indexDrag++;
         }
       } else if (x > 0) {
         if (this.indexDrag <= 1) {
-          this.indexDrag = this.size - 1;
+          this.indexDrag = 36;
         } else {
           this.indexDrag--;
         }
@@ -1703,7 +1613,7 @@ var View360 = function () {
 exports.default = View360;
 // export {View360, CurrentConfig }
 
-},{"./CurrentConfig.js":3,"./data/color/crystal_white_blue.js":15,"./data/color/crystal_white_grey.js":16,"./data/color/ionic_silver.js":17,"./data/color/sophisto_grey.js":18,"./data/color/sophisto_grey_blue.js":19,"./data/jante/crystal_white_blue_jante_470_rayons.js":20,"./data/jante/crystal_white_blue_jante_625_turbine.js":21,"./data/jante/crystal_white_grey_jante_470_rayons.js":22,"./data/jante/crystal_white_grey_jante_625_turbine.js":23,"./data/jante/ionic_silver_jante_470_rayons.js":24,"./data/jante/ionic_silver_jante_625_turbine.js":25,"./data/jante/sophisto_grey_blue_jante_470_rayons.js":26,"./data/jante/sophisto_grey_blue_jante_625_turbine.js":27,"./data/jante/sophisto_grey_jante_470_rayons.js":28,"./data/jante/sophisto_grey_jante_625_turbine.js":29}],13:[function(require,module,exports){
+},{"./CurrentConfig.js":3}],13:[function(require,module,exports){
 'use strict';
 
 var _term = require('ajax/term.js');

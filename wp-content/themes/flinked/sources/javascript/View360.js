@@ -1,31 +1,5 @@
 import CurrentConfig from './CurrentConfig.js'
 
-/**
- * color + jante 1
- */
-import sophisto_grey_blue from './data/color/sophisto_grey_blue.js'
-import sophisto_grey from './data/color/sophisto_grey.js'
-import ionic_silver from './data/color/ionic_silver.js'
-import crystal_white_grey from './data/color/crystal_white_grey.js'
-import crystal_white_blue from './data/color/crystal_white_blue.js'
-
-/**
- * jante 2
- */
-import crystal_white_blue_jante_625_turbine from './data/jante/crystal_white_blue_jante_625_turbine.js'
-import ionic_silver_jante_625_turbine from './data/jante/ionic_silver_jante_625_turbine.js'
-import sophisto_grey_blue_jante_625_turbine from './data/jante/sophisto_grey_blue_jante_625_turbine.js'
-import sophisto_grey_jante_625_turbine from './data/jante/sophisto_grey_jante_625_turbine.js'
-import crystal_white_grey_jante_625_turbine from './data/jante/crystal_white_grey_jante_625_turbine.js'
-
-/**
- * jante 3
- */
-import sophisto_grey_blue_jante_470_rayons from './data/jante/sophisto_grey_blue_jante_470_rayons.js'
-import sophisto_grey_jante_470_rayons from './data/jante/sophisto_grey_jante_470_rayons.js'
-import crystal_white_grey_jante_470_rayons from './data/jante/crystal_white_grey_jante_470_rayons.js'
-import ionic_silver_jante_470_rayons from './data/jante/ionic_silver_jante_470_rayons.js'
-import crystal_white_blue_jante_470_rayons from './data/jante/crystal_white_blue_jante_470_rayons.js'
 
 class View360
 {
@@ -47,77 +21,63 @@ class View360
 
       this.colorAllOtion = {
         sophisto_grey : {
-          obj: sophisto_grey  ,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey.png" ,
           slug: "sophisto_grey_",
         },
         sophisto_grey_blue: {
-          obj: sophisto_grey_blue,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey_blue.png" ,
           slug: "sophisto_grey_blue_",
         },
         ionic_silver: {
-          obj: ionic_silver,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/ionic_silver.png" ,
           slug: "ionic_silver_",
         },
         crystal_white_grey: {
-          obj: crystal_white_grey,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_grey.png" ,
           slug: "crystal_white_grey_",
         },
         crystal_white_blue: {
-          obj: crystal_white_blue,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_blue.png" ,
           slug: "crystal_white_blue_",
         },
         crystal_white_blue_jante_625_turbine: {
-          obj: crystal_white_blue_jante_625_turbine,
+
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_625_turbine.png" ,
           slug: "crystal_white_blue_jante_625_turbine_",
         },
         ionic_silver_jante_625_turbine: {
-          obj: ionic_silver_jante_625_turbine,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_625_turbine.png" ,
           slug: "ionic_silver_jante_625_turbine_",
         },
         sophisto_grey_blue_jante_625_turbine: {
-          obj: sophisto_grey_blue_jante_625_turbine,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_625_turbine.png" ,
           slug: "sophisto_grey_blue_jante_625_turbine_",
         },
         sophisto_grey_jante_625_turbine: {
-          obj: sophisto_grey_jante_625_turbine,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_625_turbine.png" ,
           slug: "sophisto_grey_jante_625_turbine_",
         },
         crystal_white_grey_jante_625_turbine: {
-          obj: crystal_white_grey_jante_625_turbine,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_625_turbine.png" ,
           slug: "crystal_white_grey_jante_625_turbine_",
         },
         sophisto_grey_blue_jante_470_rayons: {
-          obj: sophisto_grey_blue_jante_470_rayons,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_470_rayons.png" ,
           slug: "sophisto_grey_blue_jante_470_rayons_",
         },
         sophisto_grey_jante_470_rayons: {
-          obj: sophisto_grey_jante_470_rayons,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_470_rayons.png" ,
           slug: "sophisto_grey_jante_470_rayons_",
         },
         crystal_white_grey_jante_470_rayons: {
-          obj: crystal_white_grey_jante_470_rayons,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_470_rayons.png" ,
           slug: "crystal_white_grey_jante_470_rayons_",
         },
         ionic_silver_jante_470_rayons: {
-          obj: ionic_silver_jante_470_rayons,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_470_rayons.png" ,
           slug: "ionic_silver_jante_470_rayons_",
         },
         crystal_white_blue_jante_470_rayons: {
-          obj: crystal_white_blue_jante_470_rayons,
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_470_rayons.png" ,
           slug: "crystal_white_blue_jante_470_rayons_",
         },
@@ -127,7 +87,6 @@ class View360
 
       this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
-      this.size = this.currentKey.obj.sortKey.length;
     }
     initDisplay() {
       /**
@@ -205,7 +164,7 @@ class View360
        */
 
       if(x < 0) {
-        if(this.indexDrag >= this.size -1 )
+        if(this.indexDrag >= 36 )
         {
           this.indexDrag = 1;
         }
@@ -216,7 +175,7 @@ class View360
       else if(x > 0) {
         if(this.indexDrag <= 1 )
         {
-          this.indexDrag = this.size -1;
+          this.indexDrag = 36;
         }
         else {
           this.indexDrag--
