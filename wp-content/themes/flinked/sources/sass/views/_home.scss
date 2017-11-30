@@ -51,9 +51,11 @@
         }
     }
     &__header {
+        margin-top: 95px;
         position: relative;
+        width: 100%;
         &__img {
-
+            width: 100%;
         }
         &__container {
             max-width: 700px;
@@ -61,6 +63,9 @@
             top: 50%;
             transform: translateY(-50%);
             left: 117px;
+            @include query(1200px) {
+                left: 30px;
+            }
         }
         &__title {
             margin-left: -5px;
@@ -69,8 +74,17 @@
             color: $white;
             font-weight: $bold;
             line-height: 0.975;
-            &__title__up {
-
+            @include query(900px) {
+                font-size: 65px;
+                max-width: 500px;
+            }
+            @include query(700px) {
+                font-size: 45px;
+                max-width: 350px;
+            }
+            @include query(400px) {
+                font-size: 35px;
+                max-width: 300px;
             }
         }
     }
@@ -78,8 +92,14 @@
         padding-top: 100px;
         &__title {
             padding-left: $center;
+            @include query(1200px) {
+                padding-left: 30px;
+            }
             &__up {
                 padding-left: $center;
+                @include query(1200px) {
+                    padding-left: 30px;
+                }
             }
         }
         &__container {
@@ -89,21 +109,111 @@
             display: flex;
             justify-content: space-around;
             margin-bottom: -350px;
+            @include query(1200px) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @include query(1200px) {
+                margin-bottom: -300px;
+            }
+            @include query(950px) {
+                margin-bottom: -250px;
+            }
+            @include query(770px) {
+                margin-bottom: -220px;
+            }
+            @include query(730px) {
+                margin-bottom: -180px;
+            }
+            @include query(700px) {
+                margin-bottom: 0;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+            }
         }
         &__card {
             width: 270px;
-            &:nth-child(1){
+            @include query(930px) {
+                width: 200px;
+            }
+            @include query(700px) {
+                max-width: 400px;
+                width: calc(100% - 60px);
+                padding-top: 50px;
+                @include query(530px) {
+                    width: 100%;
+                }
+            }
+            &:nth-child(1) {
+                @include query(700px) {
+                    padding-top: 0;
+                }
+                & span {
+                    @include query(1200px) {
+                        height: 150px;
+                    }
+                    @include query(950px) {
+                        height: 200px;
+                    }
+                }
             }
             &:nth-child(2){
                 margin-top: 100px;
+                @include query(700px) {
+                    margin-top: 0;
+                }
                 & span {
                     height: 220px;
                 }
             }
             &:nth-child(3){
                 margin-top: 200px;
+                @include query(700px) {
+                    margin-top: 0;
+                }
                 & span {
                     height: 266px;
+                    &::before {
+                        display: none;
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+                & span > span {
+                    height: 1px;
+                    width: 60px;
+                    background-color: rgb(0, 66, 235);
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    @include query(770px) {
+                        width: 30px;
+                    }
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: -3px;
+                        left: -8px;
+                        border-radius: 50%;
+                        background-color: rgb(0, 66, 235);
+                        width: 7px;
+                        height: 7px;
+                    }
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: -5px;
+                        left: -10px;
+                        border-radius: 50%;
+                        border: 1px solid rgb(0, 66, 235);
+                        width: 11px;
+                        height: 11px;
+                    }
                 }
             }
             &__img {
@@ -132,6 +242,9 @@
                 height: 73px;
                 position: relative;
                 margin-left: 50%;
+                @include query(700px) {
+                    height: 50px !important;
+                }
                 &::before {
                     content: '';
                     display: block;
@@ -154,6 +267,13 @@
                     width: 11px;
                     height: 11px;
                 }
+            }
+        }
+        &__img {
+            width: 70%;
+            margin-bottom: 20px;
+            @include query(470px) {
+                width: 80%;
             }
         }
     }

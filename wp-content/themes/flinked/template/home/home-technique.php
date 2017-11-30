@@ -26,7 +26,9 @@ $home_item_content = $prefixRepeater.'explication';
             <p class="home__technique__card__txt">
               <?php echo get_sub_field($home_item_content); ?>
             </p>
-            <span class="home__technique__card__pointer"></span>
+            <span class="home__technique__card__pointer">
+              <span class="home__technique__card__pointer__secondary"></span>
+            </span>
           </div>
           <?php
       endwhile;  
@@ -35,4 +37,4 @@ $home_item_content = $prefixRepeater.'explication';
     ?>
   </div>
 </div>
-<img src="<?php echo $home_car; ?>" alt="">
+<img class="home__technique__img" src="<?php echo $home_car; ?>" alt="">
