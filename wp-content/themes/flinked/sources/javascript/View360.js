@@ -216,6 +216,7 @@ class View360
         y = event.dy;
         if(x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
+          console.log('yo')
         }
       });
     }
@@ -232,7 +233,6 @@ class View360
       this.index = 0;
       this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
-      this.initloader();
       this.loadingImage(this.colorData);
 
     }

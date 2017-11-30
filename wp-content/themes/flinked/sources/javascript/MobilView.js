@@ -1,31 +1,5 @@
 import CurrentConfig from './CurrentConfig.js'
 
-/**
- * color + jante 1
- */
-import sophisto_grey_blue from './data/color/sophisto_grey_blue.js'
-import sophisto_grey from './data/color/sophisto_grey.js'
-import ionic_silver from './data/color/ionic_silver.js'
-import crystal_white_grey from './data/color/crystal_white_grey.js'
-import crystal_white_blue from './data/color/crystal_white_blue.js'
-
-/**
- * jante 2
- */
-import crystal_white_blue_jante_625_turbine from './data/jante/crystal_white_blue_jante_625_turbine.js'
-import ionic_silver_jante_625_turbine from './data/jante/ionic_silver_jante_625_turbine.js'
-import sophisto_grey_blue_jante_625_turbine from './data/jante/sophisto_grey_blue_jante_625_turbine.js'
-import sophisto_grey_jante_625_turbine from './data/jante/sophisto_grey_jante_625_turbine.js'
-import crystal_white_grey_jante_625_turbine from './data/jante/crystal_white_grey_jante_625_turbine.js'
-
-/**
- * jante 3
- */
-import sophisto_grey_blue_jante_470_rayons from './data/jante/sophisto_grey_blue_jante_470_rayons.js'
-import sophisto_grey_jante_470_rayons from './data/jante/sophisto_grey_jante_470_rayons.js'
-import crystal_white_grey_jante_470_rayons from './data/jante/crystal_white_grey_jante_470_rayons.js'
-import ionic_silver_jante_470_rayons from './data/jante/ionic_silver_jante_470_rayons.js'
-import crystal_white_blue_jante_470_rayons from './data/jante/crystal_white_blue_jante_470_rayons.js'
 
 class MobilView
 {
@@ -40,70 +14,71 @@ class MobilView
 
       this.colorAllOtion = {
         sophisto_grey : {
-          obj: sophisto_grey  ,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/sophisto_grey.jpeg" ,
           slug: "sophisto_grey_",
         },
         sophisto_grey_blue: {
-          obj: sophisto_grey_blue,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/sophisto_grey_blue.jpeg" ,
           slug: "sophisto_grey_blue_",
         },
         ionic_silver: {
-          obj: ionic_silver,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/ionic_silver.jpeg" ,
           slug: "ionic_silver_",
         },
         crystal_white_grey: {
-          obj: crystal_white_grey,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/crystal_white_grey.jpeg" ,
           slug: "crystal_white_grey_",
         },
         crystal_white_blue: {
-          obj: crystal_white_blue,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/crystal_white_blue.jpeg" ,
           slug: "crystal_white_blue_",
         },
         crystal_white_blue_jante_625_turbine: {
-          obj: crystal_white_blue_jante_625_turbine,
+
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/crystal_white_blue_jante_625_turbine.jpeg" ,
           slug: "crystal_white_blue_jante_625_turbine_",
         },
         ionic_silver_jante_625_turbine: {
-          obj: ionic_silver_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/ionic_silver_jante_625_turbine.jpeg" ,
           slug: "ionic_silver_jante_625_turbine_",
         },
         sophisto_grey_blue_jante_625_turbine: {
-          obj: sophisto_grey_blue_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/sophisto_grey_blue_jante_625_turbine.jpeg" ,
           slug: "sophisto_grey_blue_jante_625_turbine_",
         },
         sophisto_grey_jante_625_turbine: {
-          obj: sophisto_grey_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/sophisto_grey_jante_625_turbine.jpeg" ,
           slug: "sophisto_grey_jante_625_turbine_",
         },
         crystal_white_grey_jante_625_turbine: {
-          obj: crystal_white_grey_jante_625_turbine,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/crystal_white_grey_jante_625_turbine.jpeg" ,
           slug: "crystal_white_grey_jante_625_turbine_",
         },
         sophisto_grey_blue_jante_470_rayons: {
-          obj: sophisto_grey_blue_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/sophisto_grey_blue_jante_470_rayons.jpeg" ,
           slug: "sophisto_grey_blue_jante_470_rayons_",
         },
         sophisto_grey_jante_470_rayons: {
-          obj: sophisto_grey_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/sophisto_grey_jante_470_rayons.jpeg" ,
           slug: "sophisto_grey_jante_470_rayons_",
         },
         crystal_white_grey_jante_470_rayons: {
-          obj: crystal_white_grey_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/crystal_white_grey_jante_470_rayons.jpeg" ,
           slug: "crystal_white_grey_jante_470_rayons_",
         },
         ionic_silver_jante_470_rayons: {
-          obj: ionic_silver_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/ionic_silver_jante_470_rayons.jpeg" ,
           slug: "ionic_silver_jante_470_rayons_",
         },
         crystal_white_blue_jante_470_rayons: {
-          obj: crystal_white_blue_jante_470_rayons,
+          image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/mobile/crystal_white_blue_jante_470_rayons.jpeg" ,
           slug: "crystal_white_blue_jante_470_rayons_",
         },
       }
 
       this.currentKey = this.colorAllOtion['sophisto_grey_blue'];
       
-      this.colorData = this.currentKey.obj['sophisto_grey_blue_16'];
+      this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
     }
 
@@ -126,7 +101,7 @@ class MobilView
 
       this.currentKey = this.colorAllOtion[slug];
       this.index = 0;
-      this.colorData = this.currentKey.obj[ slug +'_16'];
+      this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
       this.update(this.colorData.url)
     }
@@ -211,7 +186,7 @@ class MobilView
     init() 
     {
       if(this.main != null) {
-        this.update(this.colorData.url)
+        this.update(this.colorData)
         this.checkClick();
       }
     }

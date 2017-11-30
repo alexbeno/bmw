@@ -7,6 +7,10 @@
   z-index: 10;
   opacity: 1;
   transition: all ease 0.1s;
+
+  @include medium {
+    display: none;
+  }
 }
 
 .loader__content{
