@@ -24,7 +24,7 @@ $term_option = get_terms( 'option', array(
 
 <div class="config__nav">
   <div class="config__nav__histo">
-    <img src="<?= IMAGES_URL ?>/back.svg" alt="moteur" class="config__nav__histo__arrow config__nav__histo__arrow--back">
+    <img src="<?= IMAGES_URL ?>/back.svg" alt="moteur" class="config__nav__histo__arrow config__nav__histo__arrow--back config__nav__histo__arrow--active">
     <img src="<?= IMAGES_URL ?>/next.svg" alt="moteur" class="config__nav__histo__arrow config__nav__histo__arrow--next">
   </div>
 
@@ -32,7 +32,7 @@ $term_option = get_terms( 'option', array(
 <!-- [moteur items] -->
 
   <div class="config__nav__container">
-    <?php 
+    <?php
       foreach( $term_moteur as $term ) {
         $current = $term->name;
         $slug = $term->slug;
@@ -48,7 +48,7 @@ $term_option = get_terms( 'option', array(
 
   <div class="config__nav__container">
 
-    <?php 
+    <?php
       foreach( $term_exterieur as $term ) {
         $current = $term->name;
         $slug = $term->slug;
@@ -60,10 +60,10 @@ $term_option = get_terms( 'option', array(
     <?php } ?>
   </div>
 
-<!-- [interieur items] --> 
+<!-- [interieur items] -->
 
   <div class="config__nav__container">
-    <?php  
+    <?php
       foreach( $term_interieur as $term ) {
         $current = $term->name;
         $slug = $term->slug;
@@ -78,7 +78,7 @@ $term_option = get_terms( 'option', array(
 <!-- [pack items] -->
 
   <div class="config__nav__container">
-    <?php  
+    <?php
       foreach( $term_pack as $term ) {
         $current = $term->name;
         $slug = $term->slug;
@@ -107,7 +107,7 @@ $term_option = get_terms( 'option', array(
 
 <div class="config__mobilNav">
   <div class="config__mobilNav__slide">
-    <?php 
+    <?php
       foreach( $term_moteur as $term ) {
         $current = $term->name;
         $slug = $term->slug;

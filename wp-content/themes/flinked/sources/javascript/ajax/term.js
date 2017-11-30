@@ -8,8 +8,15 @@ import Interieur  from './../Interieur.js'
 var returns = function() {
   jQuery(document).ready(function ($) {
     if($('config__term--active')) {
+      $('config__nav__histo__arrow--active').removeClass('config__nav__histo__arrow--active');
+      $('.config__nav__histo__arrow--back').addClass('config__nav__histo__arrow--active');
+
       $('.config__nav__histo__arrow--back').on('click', function(e){
         e.preventDefault();
+
+        $('.config__nav__histo__arrow--active').removeClass('config__nav__histo__arrow--active');
+        $('.config__nav__histo__arrow--next').addClass('config__nav__histo__arrow--active');
+
         let current = $('.config__term');
         $('.config__term').css('transform', 'translateX(100vw)');
         setTimeout(function(){
@@ -23,7 +30,12 @@ var returns = function() {
 
 var forwards = function (current) {
   jQuery(document).ready(function ($) {
+
     $('.config__nav__histo__arrow--next').on('click', function(e){
+
+      $('.config__nav__histo__arrow--active').removeClass('config__nav__histo__arrow--active');
+      $('.config__nav__histo__arrow--back').addClass('config__nav__histo__arrow--active');
+
       $('.config__term').addClass('config__term--active');
       setTimeout(function(){
         $('.config__term').css('transform', 'translateX(0)');
@@ -60,7 +72,7 @@ var ajax = function () {
           ajaxurl,
           {
               'action': 'ajax_term',
-              'slug': slug, 
+              'slug': slug,
               'mainSlug': mainSlug
           },
           function(response){
