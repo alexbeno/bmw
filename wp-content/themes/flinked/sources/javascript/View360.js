@@ -129,7 +129,6 @@ class View360
       */
 
       let that = this;
-      console.log('coco')
       this.image.setAttribute('src', image)
       this.image.onload = function()
       {
@@ -317,7 +316,6 @@ class View360
     init()
     {
       if(this.main != null) {
-        // this.loadingImage(this.index, false, 0);
         this.initDisplay()
         this.checkClick();
         this.event();
@@ -326,4 +324,3 @@ class View360
 }
 
 export default View360
-// export {View360, CurrentConfig }

@@ -1416,7 +1416,6 @@ var View360 = function () {
       */
 
       var that = this;
-      console.log('coco');
       this.image.setAttribute('src', image);
       this.image.onload = function () {
         that.initDisplay();
@@ -1599,7 +1598,6 @@ var View360 = function () {
     key: 'init',
     value: function init() {
       if (this.main != null) {
-        // this.loadingImage(this.index, false, 0);
         this.initDisplay();
         this.checkClick();
         this.event();
@@ -1611,7 +1609,6 @@ var View360 = function () {
 }();
 
 exports.default = View360;
-// export {View360, CurrentConfig }
 
 },{"./CurrentConfig.js":3}],13:[function(require,module,exports){
 'use strict';
