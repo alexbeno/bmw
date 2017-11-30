@@ -1372,94 +1372,106 @@ var View360 = function () {
     this.price = document.querySelector('.config__price');
     this.image = new Image();
     this.index = 0;
-    this.indexDrag = 13;
+    this.indexDrag = 0;
     this.theviewstart = false;
 
     this.colorAllOtion = {
       sophisto_grey: {
         obj: _sophisto_grey2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey.png",
         slug: "sophisto_grey_"
       },
       sophisto_grey_blue: {
         obj: _sophisto_grey_blue2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey_blue.png",
         slug: "sophisto_grey_blue_"
       },
       ionic_silver: {
         obj: _ionic_silver2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/ionic_silver.png",
         slug: "ionic_silver_"
       },
       crystal_white_grey: {
         obj: _crystal_white_grey2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_grey.png",
         slug: "crystal_white_grey_"
       },
       crystal_white_blue: {
         obj: _crystal_white_blue2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_blue.png",
         slug: "crystal_white_blue_"
       },
       crystal_white_blue_jante_625_turbine: {
         obj: _crystal_white_blue_jante_625_turbine2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_625_turbine.png",
         slug: "crystal_white_blue_jante_625_turbine_"
       },
       ionic_silver_jante_625_turbine: {
         obj: _ionic_silver_jante_625_turbine2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_625_turbine.png",
         slug: "ionic_silver_jante_625_turbine_"
       },
       sophisto_grey_blue_jante_625_turbine: {
         obj: _sophisto_grey_blue_jante_625_turbine2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_625_turbine.png",
         slug: "sophisto_grey_blue_jante_625_turbine_"
       },
       sophisto_grey_jante_625_turbine: {
         obj: _sophisto_grey_jante_625_turbine2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_625_turbine.png",
         slug: "sophisto_grey_jante_625_turbine_"
       },
       crystal_white_grey_jante_625_turbine: {
         obj: _crystal_white_grey_jante_625_turbine2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_625_turbine.png",
         slug: "crystal_white_grey_jante_625_turbine_"
       },
       sophisto_grey_blue_jante_470_rayons: {
         obj: _sophisto_grey_blue_jante_470_rayons2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_470_rayons.png",
         slug: "sophisto_grey_blue_jante_470_rayons_"
       },
       sophisto_grey_jante_470_rayons: {
         obj: _sophisto_grey_jante_470_rayons2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_470_rayons.png",
         slug: "sophisto_grey_jante_470_rayons_"
       },
       crystal_white_grey_jante_470_rayons: {
         obj: _crystal_white_grey_jante_470_rayons2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_470_rayons.png",
         slug: "crystal_white_grey_jante_470_rayons_"
       },
       ionic_silver_jante_470_rayons: {
         obj: _ionic_silver_jante_470_rayons2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_470_rayons.png",
         slug: "ionic_silver_jante_470_rayons_"
       },
       crystal_white_blue_jante_470_rayons: {
         obj: _crystal_white_blue_jante_470_rayons2.default,
+        image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_470_rayons.png",
         slug: "crystal_white_blue_jante_470_rayons_"
       }
     };
 
     this.currentKey = this.colorAllOtion['sophisto_grey_blue'];
 
-    this.colorData = this.currentKey.obj;
+    this.colorData = this.currentKey.image;
     this.colorDataText = this.currentKey.slug;
     this.size = this.currentKey.obj.sortKey.length;
   }
 
   _createClass(View360, [{
     key: 'initDisplay',
-    value: function initDisplay(index) {
+    value: function initDisplay() {
       /**
        * load the view without 360 display
        * @param index = index of the first image
       */
 
-      var current = void 0;
-      if (this.theviewstart === true) {
-        current = this.colorData[this.colorData.sortKey[index - 1]].url;
-      } else {
-        current = this.colorData[this.colorData.sortKey[13]].url;
-      }
+      var current = this.colorData;
+
       this.container.setAttribute('src', current);
+      this.loader();
     }
   }, {
     key: 'loader',
@@ -1483,7 +1495,7 @@ var View360 = function () {
     }
   }, {
     key: 'loadingCallBack',
-    value: function loadingCallBack(data, index) {
+    value: function loadingCallBack(image) {
       /**
        * verfication when image is finish to load for display it
        * @param index = index of the current image
@@ -1494,24 +1506,15 @@ var View360 = function () {
       */
 
       var that = this;
+      console.log('coco');
+      this.image.setAttribute('src', image);
       this.image.onload = function () {
-        if (that.index < that.size) {
-          if (index === 13) {
-            that.loadingImage(that.index);
-          } else {
-            that.loadingImage(that.index, true, index);
-          }
-          data.load = true;
-        } else {
-          that.loader();
-          that.initDisplay(index);
-          that.event();
-        }
+        that.initDisplay();
       };
     }
   }, {
     key: 'loadingImage',
-    value: function loadingImage(index, change, current) {
+    value: function loadingImage(current) {
       /**
        * recusive function for load all image for the 360 view
        * @param index = index of the current image
@@ -1519,27 +1522,17 @@ var View360 = function () {
        * @param current = index of image to display first
        * @function loadingCallBack();
        */
-
-      var currentKey = this.colorData.sortKey[index];
-      this.image.src = this.colorData[this.colorData.sortKey[index]].url;
-
-      if (change === true) {
-        this.loadingCallBack(this.colorData[this.colorData.sortKey[index]], current);
-      } else {
-        this.loadingCallBack(this.colorData[this.colorData.sortKey[index]], 13);
-      }
-
-      this.index++;
+      this.loadingCallBack(current);
     }
   }, {
     key: 'update',
-    value: function update(image) {
+    value: function update() {
       /**
        * update image url
        * @param image = image to load
       */
-
-      this.container.setAttribute('src', image);
+      var size = document.querySelector('.config__car__imageContainer').offsetWidth;
+      this.container.style.transform = "translateX(-" + this.indexDrag * 1024 + "px)";
     }
   }, {
     key: 'dragCallback',
@@ -1551,20 +1544,20 @@ var View360 = function () {
        */
 
       if (x < 0) {
-        if (this.indexDrag >= this.size) {
+        if (this.indexDrag >= this.size - 1) {
           this.indexDrag = 1;
         } else {
           this.indexDrag++;
         }
       } else if (x > 0) {
         if (this.indexDrag <= 1) {
-          this.indexDrag = this.size;
+          this.indexDrag = this.size - 1;
         } else {
           this.indexDrag--;
         }
       }
       var current = this.colorDataText + this.indexDrag;
-      this.update(this.colorData[current].url);
+      this.update();
     }
   }, {
     key: 'event',
@@ -1573,9 +1566,8 @@ var View360 = function () {
        * event for detect the drag
        * @function dragCallback();
        */
-
       var that = this;
-      var element = document.querySelector('.config__car__image');
+      var element = document.querySelector('.config__car__imageContainer');
       var x = 0;
       var y = 0;
       interact(element).draggable({
@@ -1611,16 +1603,10 @@ var View360 = function () {
 
       this.currentKey = this.colorAllOtion[slug];
       this.index = 0;
-      this.colorData = this.currentKey.obj;
+      this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
-
-      if (this.colorData[this.colorData.sortKey[10]].load === false) {
-        this.initloader();
-        this.loadingImage(this.index, true, this.indexDrag);
-      } else {
-        this.initDisplay(this.indexDrag - 1);
-        this.loader();
-      }
+      this.initloader();
+      this.loadingImage(this.colorData);
     }
   }, {
     key: 'optionClick',
@@ -1703,8 +1689,10 @@ var View360 = function () {
     key: 'init',
     value: function init() {
       if (this.main != null) {
-        this.loadingImage(this.index, false, 0);
+        // this.loadingImage(this.index, false, 0);
+        this.initDisplay();
         this.checkClick();
+        this.event();
       }
     }
   }]);

@@ -7,7 +7,9 @@
   <div class="loader">
       <div class="loader__content"></div>
   </div>
-  <img id="config__car__image" src="" alt="BMW" class="dragdealer config__car__image">
+  <div class="config__car__imageContainer">
+    <img id="config__car__image" src="" alt="BMW" class="dragdealer config__car__image">
+  </div>
 
   <div class="config__price">
     <p class="config__price__text">Prix maximum conseillé :</p>
