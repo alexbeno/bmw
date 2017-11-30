@@ -6,7 +6,7 @@ class Interieur {
     this.main = document.querySelector('.config__car');
     this.main_image = document.querySelector('.config__car__image');
     this.main_imageMobil = document.querySelector('.config__car__imageMobil');
-    this.main_3D = document.querySelector('.config__3D');
+
     this.img = document.createElement('img');
     this.setup = false;
   }
@@ -21,7 +21,7 @@ class Interieur {
 
     this.main_image.style.opacity = 0;
     this.main_imageMobil.style.opacity = 0;
-    this.main_3D.style.opacity = 0;
+
   }
 
   destroyInterieur() {
@@ -31,7 +31,6 @@ class Interieur {
 
       this.main_image.style.opacity = 1;
       this.main_imageMobil.style.opacity = 1;
-      this.main_3D.style.opacity = 1;
 
       this.setup = false;
     }
@@ -50,6 +49,7 @@ class Interieur {
         button[i].addEventListener('click', function (e) {
           e.preventDefault();
           let url = this.getAttribute('data-image');
+          console.log('cocou')
           that.clickCallback(url);
         });
       }

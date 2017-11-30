@@ -49,7 +49,7 @@ class NavColor
         currentActive = document.querySelector('.config__nav__histo__arrow--active');
         currentActive.classList.remove('config__nav__histo__arrow--active');
         activeArrowB.classList.add('config__nav__histo__arrow--active');
-        
+
         setTimeout(() => {
           current.style.transform="translateX(0)";
         }, 100);
@@ -69,7 +69,6 @@ class NavColor
         activeArrow.classList.add('config__nav__histo__arrow--active');
 
         this.back.addEventListener('click', function(e){
-          console.log('yoyoyoy')
           e.preventDefault();
           activeItem.style.transform="translateX(100vw)";
           setTimeout(() => {
@@ -79,7 +78,7 @@ class NavColor
         })
       }
     }
-    init() 
+    init()
     {
       if(this.nav != null) {
         this.select();
