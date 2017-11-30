@@ -93,6 +93,10 @@
   padding: 0 10px;
   background: rgba(0, 0, 0, 0.5);
   @include flex();
+
+  @include medium {
+    width: 100%;
+  }
 }
 
 

@@ -12,6 +12,7 @@ class View360
       this.main = document.querySelector('.config__car');
       this.container = document.querySelector('.config__car__image');
       this.checkOption = document.querySelectorAll('.config__nav__item__sub__link');
+      this.footer = document.querySelector('.footer');
       this.loaderContent = document.querySelector('.loader');
       this.price = document.querySelector('.config__price');
       this.image = new Image();
@@ -319,6 +320,7 @@ class View360
         this.initDisplay()
         this.checkClick();
         this.event();
+        this.footer.style.display ="none";
       }
     }
 }
