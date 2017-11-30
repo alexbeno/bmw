@@ -37,12 +37,11 @@ class View360
       let that = this;
       this.main = document.querySelector('.config__car');
       this.container = document.querySelector('.config__car__image');
-      this.button = document.querySelector('.config__3D__image');
       this.checkOption = document.querySelectorAll('.config__nav__item__sub__link');
       this.loaderContent = document.querySelector('.loader');
       this.image = new Image();
       this.index = 0;
-      this.indexDrag = 0;
+      this.indexDrag = 13;
       this.theviewstart = false;
 
       this.colorAllOtion = {
@@ -173,14 +172,15 @@ class View360
         else {
           that.loader();
           that.initDisplay(index);
-          that.startView();
+          // that.startView();
+          that.event();
         }
       }
     }
     loadingImage(index, change, current) {
       /**
        * recusive function for load all image for the 360 view
-       * @param index = index of the current image 
+       * @param index = index of the current image
        * @param change = condition for know if they are a color change
        * @param current = index of image to display first
        * @function loadingCallBack();
@@ -219,7 +219,7 @@ class View360
       let inter = setInterval(function(){
         if(index < that.size) {
           index++
-        } 
+        }
         else {
           that.event();
           clearInterval(inter);
@@ -283,12 +283,12 @@ class View360
           restriction: element.parentNode,
           elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
           endOnly: true
-        } 
+        }
       })
-      
+
       .on('dragmove', function (event) {
         x = event.dx;
-        y = event.dy; 
+        y = event.dy;
         if(x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
         }
@@ -320,7 +320,7 @@ class View360
       this.index = 0;
       this.colorData = this.currentKey.obj;
       this.colorDataText = this.currentKey.slug;
-      
+
       if(this.colorData[this.colorData.sortKey[10]].load === false)
       {
         this.initloader();
@@ -352,7 +352,7 @@ class View360
 
           else {
             let configJante = CurrentConfig['jante'];
-            let theSlug = slug + '_' + configJante 
+            let theSlug = slug + '_' + configJante
             that.changeColor(theSlug);
           }
         })
@@ -409,7 +409,7 @@ class View360
         })
       }
     }
-    init() 
+    init()
     {
       if(this.main != null) {
         this.loadingImage(this.index, false, 0);

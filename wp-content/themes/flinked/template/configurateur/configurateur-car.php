@@ -16,7 +16,4 @@
   </div>
 
   <img id="config__car__imageMobil" src="" alt="BMW" class="dragdealer config__car__imageMobil">
-  <div class="config__3D">
-    <img src="<?= IMAGES_URL ?>/startView.png" alt="3d view"class="config__3D__image">
-  </div>
 </div>
