@@ -13,6 +13,8 @@ const options = {
 
 const observer = new window.IntersectionObserver(onIntersect, options)
 
+// console.log(observer)
+
 export function initScrollAnim() {
   ;[...document.querySelectorAll('.to-animate')].forEach(element => observer.observe(element))
 }

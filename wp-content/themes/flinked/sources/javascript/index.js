@@ -7,6 +7,7 @@ import View360  from './View360.js'
 import MobilView  from './MobilView.js'
 import Devis  from './Devis.js'
 import Loader  from './Loader.js'
+import IECallback  from './IECallback.js'
 import { initScrollAnim } from './scroll_anim'
 
 
@@ -75,6 +76,13 @@ function init() {
 
   let loader = new Loader();
   loader.init();
+
+  /**
+  * IECallback.js
+  */
+
+  let iECallback = new IECallback();
+  iECallback.init();
 
 }
 
