@@ -14,24 +14,8 @@ $dyna_slider = get_field($prefixe.'slider');
     </div>
     <div class="dyna__aero__content__text content__text to-animate"><?= $dyna_contenu;  ?></div>
   </div>
-  <div class="dyna__aero__slider slider to-animate">
-    <div class="slider__container">
-      <div class="dyna__aero__slider__container__mover slider__container__mover">
-        <?php
-          if( $dyna_slider ):
-            foreach( $dyna_slider as $slider ):
-              ?>
-                <img src="<?= $slider['url']; ?>" alt="BMW" class="dyna__aero__slider__container__item slider__container__item">
-              <?php
-            endforeach;
-          endif;
-        ?>
-      </div>
-    </div>
-    <div class="dyna__aero__slider__button slider__button">
-        <a href="#" class="dyna__aero__slider__button__left slider__button__item slider__button__item--left"></a>
-        <a href="#" class="dyna__aero__slider__button__right slider__button__item slider__button__item--right"></a>
-    </div>
+  <div class="dyna__aero__slider to-animate">
+    <img src="<?= $dyna_slider ?>" alt="BMW" class="dyna__aero__slider__container__item">
   </div>
   <p class="dyna__aero__number numberSection">02</p>
 </div>
