@@ -96,9 +96,11 @@ class View360
       */
 
       let current = this.colorData;
-
+      let that = this;
       this.container.setAttribute('src', current)
-      this.loader();
+      setTimeout(function(){
+        that.loader();
+      }, 2000);
     }
 
     loader() {
@@ -217,7 +219,6 @@ class View360
         y = event.dy;
         if(x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
-          console.log('yo')
         }
       });
     }

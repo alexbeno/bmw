@@ -1306,9 +1306,11 @@ var View360 = function () {
       */
 
       var current = this.colorData;
-
+      var that = this;
       this.container.setAttribute('src', current);
-      this.loader();
+      setTimeout(function () {
+        that.loader();
+      }, 2000);
     }
   }, {
     key: 'loader',
@@ -1424,7 +1426,6 @@ var View360 = function () {
         y = event.dy;
         if (x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
-          console.log('yo');
         }
       });
     }
