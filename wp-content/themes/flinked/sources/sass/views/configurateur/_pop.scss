@@ -2,7 +2,9 @@
   @include flex($direction: column, $justify: space-around, $align: center);
   transform: translateY(- em(350));
   width: 100%;
-  height: em(350);
+  min-height: em(350);
+  height: auto;
+  padding: 20px 0;
   background: #e1e1e1;
   z-index: 150;
   transition: all $transition-bezier1 0.5s;
@@ -150,17 +152,17 @@
   margin-bottom: 30px;
   border-bottom: 1px solid #FFF;
   transition: all $transition-bezier1 0.5s;
+  overflow: hidden;
 }
 
 .config__pop__mainOption--option {
   width: 90%;
   padding: 50px 0;
-  height: auto;
   transition: all $transition-bezier1 0.5s;
 }
 
 .config__pop--option {
-  height: auto;
+  // height: auto;
   padding: 20px 0;
   transition: all $transition-bezier1 0.5s;
 }
