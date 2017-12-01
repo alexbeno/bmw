@@ -8,18 +8,6 @@
     $link_youtube = get_field('url_youtube', 'option');
 ?>
 
-<?php
-if( have_rows('repeater_field_name') ):
-    while ( have_rows('repeater_field_name') ) : the_row();
-?>
-    
-<?php
-        the_sub_field('sub_field_name');
-    endwhile;
-else :
-endif;
-
-?>
         <footer class="footer">
             <div class="footer__item">
                 <a href="<?php echo get_option('home'); ?>/" ><img class="footer__item__logo" src="<?=IMAGES_URL?>/bmw.png"/></a>
@@ -64,9 +52,9 @@ endif;
                 ?>
             </div>
             <div class="footer__item">
-                <a class="footer__item__social" target="_blank" href="<?= $link_fb ?>">f</a>
-                <a class="footer__item__social" target="_blank" href="<?= $link_twitter ?>">t</a>
-                <a class="footer__item__social" target="_blank" href="<?= $link_youtube ?>">y</a>
+                <a class="footer__item__social" target="_blank" href="<?= $link_fb ?>"><img class="footer__item__social__image" src="<?=IMAGES_URL?>/fb.svg"/></a>
+                <a class="footer__item__social" target="_blank" href="<?= $link_twitter ?>"><img class="footer__item__social__image" src="<?=IMAGES_URL?>/twit.svg"/></a>
+                <a class="footer__item__social" target="_blank" href="<?= $link_youtube ?>"><img class="footer__item__social__image" src="<?=IMAGES_URL?>/yt.svg"/></a>
             </div>
             <span class="footer__copyright">© BMW France 2017</span>
         </footer>
