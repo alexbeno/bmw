@@ -15,5 +15,4 @@ $securite_image = get_field($prefixe.'image');
     </div>
     <div class="securite__affichage__content__text content__text to-animate"><?= $securite_content;  ?></div>
   </div>
-  <p class="securite__affichage__number numberSection to-animate">03</p>
 </div>

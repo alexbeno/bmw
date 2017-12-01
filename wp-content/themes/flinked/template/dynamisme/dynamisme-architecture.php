@@ -10,38 +10,6 @@ $dyna_item = 'dynamisme_architecture--contenu';
 $dyna_item_title = $prefixItem .'titre';
 $dyna_item_contenu = $prefixItem .'texte';
 
-// echo '</br>';
-// echo'dynamisme architecture';
-// echo '</br>';
-
-// echo $dyna_upTitle;
-
-// echo '</br>';
-
-// echo $dyna_title;
-
-// echo '</br>';
-
-// echo $dyna_image;
-
-// echo '</br>';
-
-// if( have_rows($dyna_item) ):
-//   while ( have_rows($dyna_item) ) : the_row();
-//       echo '</br>';
-//       echo '</br>';
-
-//       echo get_sub_field($dyna_item_title);
-
-//       echo '</br>';
-
-//       echo get_sub_field($dyna_item_contenu);
-//   endwhile;
-// else :
-// endif;
-
-// echo '</br>';
-// echo'--------------------------';
 ?>
 
 <div class="dyna__archi">
@@ -65,5 +33,4 @@ $dyna_item_contenu = $prefixItem .'texte';
     else :
     endif;
   ?>
-  <p class="dyna__archi__number numberSection">03</p>
   </div>

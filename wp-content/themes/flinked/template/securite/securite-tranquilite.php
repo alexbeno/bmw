@@ -16,6 +16,5 @@ $securite_image = get_field($prefixe.'image');
   </div>
   <div class="securite__lumiere__image">
     <img class="securite__lumiere__image__img" src="<?= $securite_image ?>"/>
-    <p class="securite__lumiere__number numberSection to-animate">01</p>
   </div>
 </div>

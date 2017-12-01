@@ -17,5 +17,4 @@ $dyna_slider = get_field($prefixe.'slider');
   <div class="dyna__aero__slider to-animate">
     <img src="<?= $dyna_slider ?>" alt="BMW" class="dyna__aero__slider__container__item">
   </div>
-  <p class="dyna__aero__number numberSection">02</p>
 </div>

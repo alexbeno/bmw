@@ -36,5 +36,4 @@ $design_slider = get_field($prefixe.'slider');
         <a href="#" class="design__lumiere__slider__button__right slider__button__item slider__button__item--right"></a>
     </div>
   </div>
-  <p class="design__lumiere__number numberSection">03</p>
 </div>

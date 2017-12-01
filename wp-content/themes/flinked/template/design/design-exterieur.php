@@ -31,5 +31,4 @@ $design_content_content = $prefixeRepeat.'explain';
     ?>
   </div>
   <img src="<?= $design_image ?>" alt="BMW" class="design__exterieur__footer">
-  <p class="design__exterieur__number numberSection">02</p>
 </div>

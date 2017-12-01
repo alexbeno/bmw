@@ -1310,7 +1310,7 @@ var View360 = function () {
       this.container.setAttribute('src', current);
       setTimeout(function () {
         that.loader();
-      }, 2000);
+      }, 1300);
     }
   }, {
     key: 'loader',

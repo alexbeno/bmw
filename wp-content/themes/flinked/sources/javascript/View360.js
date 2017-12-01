@@ -100,7 +100,7 @@ class View360
       this.container.setAttribute('src', current)
       setTimeout(function(){
         that.loader();
-      }, 2000);
+      }, 1300);
     }
 
     loader() {

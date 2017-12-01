@@ -17,5 +17,4 @@ $securite_slider = get_field($prefixe.'slider');
   <div class="securite__aide__slider to-animate">
     <img src="<?= $securite_slider?>" alt="BMW" class="securite__aide__slider__container__item">
   </div>
-  <p class="securite__aide__number numberSection to-animate">02</p>
 </div>

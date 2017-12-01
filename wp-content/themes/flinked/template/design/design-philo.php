@@ -24,6 +24,4 @@ $design_image = get_field($prefixe.'image');
       <div class="design__philo__content__text content__text to-animate"><?= wpautop($design_contenu_explain) ?></div>
     </div>
   </div>
-
-  <p class="design__philo__number numberSection">01</p>
 </div>
