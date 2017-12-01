@@ -77,7 +77,7 @@ class MobilView
       }
 
       this.currentKey = this.colorAllOtion['sophisto_grey_blue'];
-      
+
       this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
     }
@@ -103,7 +103,8 @@ class MobilView
       this.index = 0;
       this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
-      this.update(this.colorData.url)
+      this.update(this.colorData)
+      console.log(this.colorData)
     }
 
     optionClick() {
@@ -126,7 +127,7 @@ class MobilView
 
           else {
             let configJante = CurrentConfig['jante'];
-            let theSlug = slug + '_' + configJante 
+            let theSlug = slug + '_' + configJante
             that.changeColor(theSlug);
           }
         })
@@ -183,7 +184,7 @@ class MobilView
         })
       }
     }
-    init() 
+    init()
     {
       if(this.main != null) {
         this.update(this.colorData)

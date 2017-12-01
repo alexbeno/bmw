@@ -34,3 +34,4 @@ $dyna_item_contenu = $prefixItem .'texte';
     endif;
   ?>
   </div>
+  </div>

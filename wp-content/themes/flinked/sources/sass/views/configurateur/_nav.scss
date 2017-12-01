@@ -9,7 +9,9 @@
   right: 0;
   top: em(0);
   padding-top: 65px;
-
+  height: 100vh;
+  padding-bottom: 100px;
+  overflow: scroll;
   @include medium {
     position: relative;
     width: 100%;
@@ -21,7 +23,7 @@
   right: 0;
   top: 0em;
   width: 330px;
-  position: absolute;
+  position: fixed;
   background: $white;
   padding: 20px 0;
   height: auto;
@@ -144,9 +146,9 @@
 }
 .config__term--active {
   display: block;
-  padding-top: em(30);
+  padding-top: em(60);
   position: fixed;
-  top: 25px;
+  top: 0;
   right: 0;
   width: 330px;
   height: 100vh;

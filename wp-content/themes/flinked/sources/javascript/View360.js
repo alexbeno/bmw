@@ -18,7 +18,7 @@ class View360
       this.viewIcone = document.querySelector('.config__3D');
       this.image = new Image();
       this.index = 0;
-      this.indexDrag = 0;
+      this.indexDrag = 13;
       this.theviewstart = false;
       this.oneDrage = false;
 
@@ -26,22 +26,27 @@ class View360
         sophisto_grey : {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey.png" ,
           slug: "sophisto_grey_",
+          load: false,
         },
         sophisto_grey_blue: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/sophisto_grey_blue.png" ,
           slug: "sophisto_grey_blue_",
+          load: false,
         },
         ionic_silver: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/ionic_silver.png" ,
           slug: "ionic_silver_",
+          load: false,
         },
         crystal_white_grey: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_grey.png" ,
           slug: "crystal_white_grey_",
+          load: false,
         },
         crystal_white_blue: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/couleurs/crystal_white_blue.png" ,
           slug: "crystal_white_blue_",
+          load: false,
         },
         crystal_white_blue_jante_625_turbine: {
 
@@ -51,38 +56,47 @@ class View360
         ionic_silver_jante_625_turbine: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_625_turbine.png" ,
           slug: "ionic_silver_jante_625_turbine_",
+          load: false,
         },
         sophisto_grey_blue_jante_625_turbine: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_625_turbine.png" ,
           slug: "sophisto_grey_blue_jante_625_turbine_",
+          load: false,
         },
         sophisto_grey_jante_625_turbine: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_625_turbine.png" ,
           slug: "sophisto_grey_jante_625_turbine_",
+          load: false,
         },
         crystal_white_grey_jante_625_turbine: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_625_turbine.png" ,
           slug: "crystal_white_grey_jante_625_turbine_",
+          load: false,
         },
         sophisto_grey_blue_jante_470_rayons: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_blue_jante_470_rayons.png" ,
           slug: "sophisto_grey_blue_jante_470_rayons_",
+          load: false,
         },
         sophisto_grey_jante_470_rayons: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/sophisto_grey_jante_470_rayons.png" ,
           slug: "sophisto_grey_jante_470_rayons_",
+          load: false,
         },
         crystal_white_grey_jante_470_rayons: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_grey_jante_470_rayons.png" ,
           slug: "crystal_white_grey_jante_470_rayons_",
+          load: false,
         },
         ionic_silver_jante_470_rayons: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/ionic_silver_jante_470_rayons.png" ,
           slug: "ionic_silver_jante_470_rayons_",
+          load: false,
         },
         crystal_white_blue_jante_470_rayons: {
           image: baseurl.siteurl + "/wp-content/themes/flinked/dist/assets/image/configurateur/jante/crystal_white_blue_jante_470_rayons.png" ,
           slug: "crystal_white_blue_jante_470_rayons_",
+          load: false,
         },
       }
 
@@ -106,9 +120,6 @@ class View360
       let current = this.colorData;
       let that = this;
       this.container.setAttribute('src', current)
-      setTimeout(function(){
-        that.loader();
-      }, 1300);
     }
 
     loader() {
@@ -129,7 +140,7 @@ class View360
       }, 100);
     }
 
-    loadingCallBack(image) {
+    loadingImage(image) {
       /**
        * verfication when image is finish to load for display it
        * @param index = index of the current image
@@ -140,23 +151,15 @@ class View360
       */
 
       let that = this;
-      this.image.setAttribute('src', image)
+      this.image.setAttribute('src', this.colorData)
       this.image.onload = function()
       {
+        that.currentKey.load = true;
         that.initDisplay();
+        that.loader();
       }
     }
 
-    loadingImage(current) {
-      /**
-       * recusive function for load all image for the 360 view
-       * @param index = index of the current image
-       * @param change = condition for know if they are a color change
-       * @param current = index of image to display first
-       * @function loadingCallBack();
-       */
-      this.loadingCallBack(current);
-    }
     update() {
       /**
        * update image url
@@ -245,6 +248,9 @@ class View360
       this.index = 0;
       this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
+      if(this.currentKey.load === false) {
+        this.initloader();
+      }
       this.loadingImage(this.colorData);
 
     }
@@ -328,10 +334,12 @@ class View360
     init()
     {
       if(this.main != null) {
-        this.initDisplay()
+        this.loadingImage();
         this.checkClick();
         this.event();
         this.footer.style.display ="none";
+        let size = document.querySelector('.config__car__imageContainer').offsetWidth;
+        this.container.style.transform = "translateX(-" + this.indexDrag * 1024 + "px)";
       }
     }
 }

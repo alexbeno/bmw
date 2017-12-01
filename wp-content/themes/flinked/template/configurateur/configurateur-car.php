@@ -13,7 +13,7 @@
 
   <div class="config__price">
     <p class="config__price__text">Prix maximum conseillé :</p>
-    <p data-price="<?= $config_price ?>" class="config__price__item"><?= $config_price ?>,00</p>
+    <p data-price="<?= $config_price ?>" class="config__price__item"><?= $config_price ?>,00€</p>
     <a href="#" class="config__price__devis">Demander un devis</a>
   </div>
 

@@ -39,19 +39,33 @@
         }
         &__content {
             margin-top: 60px;
-            &__title {
-
+            @include query(1200px) {
+                width: 60%;
             }
-            &__text {
-
+            @include query(670px) {
+                width: 80%;
+            }
+            @include query(520px) {
+                width: 100%;
             }
         }
         &__slider {
-
+            @include query(850px) {
+                width: 90vw;
+            }
+            .slider__container__item {
+                @include query(850px) {
+                    width: 90vw;
+                }
+            }
+            .slider__button {
+                @include query(850px) {
+                    left: 0;
+                }
+            }
         }
     }
     &__header {
-        margin-top: 95px;
         position: relative;
         width: 100%;
         &__img {
@@ -230,6 +244,7 @@
                 font-family: $font;
                 color: rgb(0, 0, 0);
                 line-height: 19px;
+                text-decoration: none;
             }
             &__txt {
                 margin-top: 28px;

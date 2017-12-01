@@ -69,7 +69,7 @@ class Devis
     }
 
     fillPrice() {
-      let priceToInsert = Intl.NumberFormat().format(CurrentConfig.price) + ',00';
+      let priceToInsert = Intl.NumberFormat().format(CurrentConfig.price) + ',00€';
       this.priceItem.innerText = priceToInsert;
     }
 

@@ -59,7 +59,7 @@ class AddOption
     }
 
     clearPrice() {
-      this.price.innerHTML = Intl.NumberFormat().format(this.basePrice) + ',00'; 
+      this.price.innerHTML = Intl.NumberFormat().format(this.basePrice) + ',00€';
     }
 
     displayNewPrice() {
@@ -68,11 +68,11 @@ class AddOption
       let that = this;
       let index = 0;
       this.price.setAttribute('data-update', this.updatePrice )
-      
+
       if(diff === 0) {
         let temp = this.basePrice
         let tempB = Intl.NumberFormat().format(temp)
-        that.price.innerHTML =  tempB + ',00';  
+        that.price.innerHTML =  tempB + ',00€';
       }
 
       for (let index = 0; index < diff; index++) {
@@ -80,8 +80,8 @@ class AddOption
           index++;
           let temp = displayPrice += 1
           let tempB = Intl.NumberFormat().format(temp)
-          that.price.innerHTML =  tempB + ',00';         
-        }, 20);          
+          that.price.innerHTML =  tempB + ',00€';
+        }, 20);
       }
     }
 
@@ -93,7 +93,7 @@ class AddOption
     }
 
     getTabPrice() {
-      
+
       let that = this;
       this.tempPrice = 0;
 
@@ -123,7 +123,7 @@ class AddOption
       let arrayOption = { price: prices, name: names, slug: slugs }
       this.option["option"].item.push(arrayOption);
       CurrentConfig["listOfOption"]["option"].item.push(arrayOption);
-      this.getPriceArray();        
+      this.getPriceArray();
     }
 
     checkOption(optionCats, prices, names, slugs, taxos, classSelect) {
@@ -136,7 +136,7 @@ class AddOption
           if(element === slugs) {
             present = true;
             unsave = index;
-          }   
+          }
         }
         if(present === false) {
           this.saveOptionArray(optionCats, prices, names, slugs, taxos)
@@ -146,7 +146,7 @@ class AddOption
           CurrentConfig["listOfOption"]["option"].item.splice(unsave, 1);
           classSelect.classList.remove('config__term__item--active');
 
-          this.getPriceArray();  
+          this.getPriceArray();
         }
       }
       else {
@@ -160,7 +160,7 @@ class AddOption
       for (let index = 0; index < size; index++) {
         const element = this.option["option"].item[index].price;
         totalOptionPrice +=  element;
-        
+
       }
       this.option["option"].price = totalOptionPrice;
       this.getTabPrice();
@@ -169,7 +169,7 @@ class AddOption
     clickEvent () {
       let navButton = document.querySelectorAll('.config__nav__item__sub__link');
       let optionButton = document.querySelectorAll('.config__term__item__add');
-      
+
       let size = optionButton.length;
       let that = this;
 
@@ -202,7 +202,7 @@ class AddOption
       }
     }
 
-    init() 
+    init()
     {
       if(this.content != null) {
         this.getInfo()

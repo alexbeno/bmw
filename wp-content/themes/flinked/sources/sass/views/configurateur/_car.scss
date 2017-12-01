@@ -13,6 +13,7 @@
   margin: auto;
   width: 1024px;
   height: auto;
+  cursor: -webkit-grab;
   opacity: 1;
   transition: all ease 0.1s;
   overflow: hidden;
@@ -126,9 +127,9 @@
 }
 
 .config__3D__image {
-  width: 18%;
+  width: 13%;
   height: auto;
-  cursor: pointer;
+  opacity: 0.5;
 }
 
 .config__3D__image--right {
