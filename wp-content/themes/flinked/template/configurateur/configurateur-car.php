@@ -18,4 +18,9 @@
   </div>
 
   <img id="config__car__imageMobil" src="" alt="BMW" class="dragdealer config__car__imageMobil">
+  <div class="config__3D">
+    <img src="<?= IMAGES_URL ?>/iconeConf/left-arrow.svg" alt="3d view"class="config__3D__image config__3D__image--left">
+    <img src="<?= IMAGES_URL ?>/iconeConf/hand-pointer.svg" alt="3d view"class="config__3D__image config__3D__image--hand">
+    <img src="<?= IMAGES_URL ?>/iconeConf/left-arrow.svg" alt="3d view"class="config__3D__image config__3D__image--right">
+  </div>
 </div>
