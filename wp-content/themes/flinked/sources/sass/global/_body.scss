@@ -7,4 +7,9 @@ body {
 .body--devis {
   height: 100vh;
   overflow: hidden;
+
+  @include medium {
+    overflow: visible;
+    height: 100vh;
+  }
 }

@@ -26,6 +26,10 @@
   padding: 20px 0;
   height: auto;
   z-index: 10;
+
+  @include medium {
+    width: 100%;
+  }
 }
 
 .config__nav__histo__arrow {

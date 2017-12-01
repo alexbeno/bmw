@@ -16,6 +16,18 @@
   opacity: 1;
   transition: all ease 0.1s;
   overflow: hidden;
+  @include query( 1260px) {
+    width: 110%;
+    margin-left: -15%;
+  }
+  @include query( 1202px) {
+    width: 120%;
+    margin-left: -20%;
+  }
+  @include query( 1120px) {
+    width: 120%;
+    margin-left: -25%;
+  }
   @include medium {
     display: none;
   }
@@ -82,6 +94,7 @@
     @include abutton($left: em(10), $up: em(12));
     font-size: em(12);
     margin-left: em(10);
+    background: $blue;
   }
 }
 
