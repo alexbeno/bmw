@@ -1222,10 +1222,12 @@ var View360 = function () {
     this.footer = document.querySelector('.footer');
     this.loaderContent = document.querySelector('.loader');
     this.price = document.querySelector('.config__price');
+    this.viewIcone = document.querySelector('.config__3D');
     this.image = new Image();
     this.index = 0;
     this.indexDrag = 0;
     this.theviewstart = false;
+    this.oneDrage = false;
 
     this.colorAllOtion = {
       sophisto_grey: {
@@ -1298,6 +1300,13 @@ var View360 = function () {
   }
 
   _createClass(View360, [{
+    key: 'unshowIcone',
+    value: function unshowIcone() {
+      if (this.oneDrage === false) {
+        this.viewIcone.classList.remove('config__3D--active');
+      }
+    }
+  }, {
     key: 'initDisplay',
     value: function initDisplay() {
       /**
@@ -1426,6 +1435,8 @@ var View360 = function () {
         y = event.dy;
         if (x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
+          that.unshowIcone();
+          that.oneDrage = true;
         }
       });
     }

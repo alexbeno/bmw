@@ -15,10 +15,12 @@ class View360
       this.footer = document.querySelector('.footer');
       this.loaderContent = document.querySelector('.loader');
       this.price = document.querySelector('.config__price');
+      this.viewIcone = document.querySelector('.config__3D');
       this.image = new Image();
       this.index = 0;
       this.indexDrag = 0;
       this.theviewstart = false;
+      this.oneDrage = false;
 
       this.colorAllOtion = {
         sophisto_grey : {
@@ -89,6 +91,12 @@ class View360
       this.colorData = this.currentKey.image;
       this.colorDataText = this.currentKey.slug;
     }
+    unshowIcone() {
+      if(this.oneDrage === false) {
+        this.viewIcone.classList.remove('config__3D--active');
+      }
+    }
+
     initDisplay() {
       /**
        * load the view without 360 display
@@ -219,6 +227,8 @@ class View360
         y = event.dy;
         if(x != 0 && x < 100 && x > -100) {
           that.dragCallback(x);
+          that.unshowIcone();
+          that.oneDrage = true;
         }
       });
     }
